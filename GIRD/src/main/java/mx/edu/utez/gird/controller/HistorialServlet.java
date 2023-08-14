@@ -24,7 +24,7 @@ public class HistorialServlet extends HttpServlet {
         Connection con = new MysqlConector().connect();
 
         resp.setContentType("application/pdf");
-        resp.setHeader("Content-Disposition","Attachment; filename=ReportePrestamos.pdf");
+        resp.setHeader("Content-Disposition","Attachment; filename=ReporteDispositivos.pdf");
         try {
             byte[] bytes = JasperRunManager.runReportToPdf(input, mapa, con);
             OutputStream os = resp.getOutputStream();

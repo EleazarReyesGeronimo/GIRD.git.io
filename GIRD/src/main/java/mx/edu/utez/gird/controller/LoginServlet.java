@@ -16,28 +16,30 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String correo = req.getParameter("email");
         String contra = req.getParameter("contra");
-        int id = Integer.parseInt(req.getParameter("id"));
+        String redirect = "index.jsp";
 
         DaoUsuarios dao = new DaoUsuarios();
         Usuarios usrs = (Usuarios) dao.findOne(correo,contra);
 
-        if (usrs.getId() != id) { //Que si encontro al usuario
-            if (usrs.getEmail().equals(correo)&& usrs.getContra().equals(contra)){
-
-                req.getSession().setAttribute("tipoSesion", "admin");
+        if (usrs.getEmail() != correo) { //Que si encontro al usuario
+            if (usrs.isTipoUsr()){
+                redirect = "vistaAdmin.jsp";
+            } else {
+                redirect="vistaBecario.jsp";
             }
+            req.getSession().setAttribute("tipoSesion", usrs.isTipoUsr());
             req.getSession().setAttribute("sesion", usrs);
         }else{
-
+            req.getSession().setAttribute("msg", "Informacion Errónea");
         }
-        resp.sendRedirect("cliente.jsp");
+        resp.sendRedirect(redirect);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("sesion");
         req.getSession().removeAttribute("tipoSesion");
-        resp.sendRedirect("login.jsp");
+        resp.sendRedirect("index.jsp");
     }
 
 }

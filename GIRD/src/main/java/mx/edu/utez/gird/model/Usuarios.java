@@ -56,7 +56,7 @@ public class Usuarios {
         return contra;
     }
 
-    public void setContra(String contraseña) {
+    public void setContra(String contra) {
         this.contra= contra;
     }
 

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDispositivos" pageWidth="880" pageHeight="861" columnWidth="840" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bccc96e2-044b-4dab-94dd-baf7ac00a9ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Con_Dispos"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from inventario.dispositivos]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="numSerie" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numSerie"/>
+		<property name="com.jaspersoft.studio.field.label" value="numSerie"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="marca"/>
+		<property name="com.jaspersoft.studio.field.label" value="marca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="modelo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.label" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="unidades" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="unidades"/>
+		<property name="com.jaspersoft.studio.field.label" value="unidades"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="caracteristicas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="caracteristicas"/>
+		<property name="com.jaspersoft.studio.field.label" value="caracteristicas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="estatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="estatus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<field name="observaciones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="observaciones"/>
+		<property name="com.jaspersoft.studio.field.label" value="observaciones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dispositivos"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="40" y="-10" width="790" height="40" forecolor="#FFFFFF" backcolor="#1D1D54" uuid="8776abfa-eb05-42bd-bf32-a3d227a3606c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Britannic Bold" size="17"/>
+				</textElement>
+				<text><![CDATA[Reporte de Dispositivos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="30" width="40" height="30" uuid="13bfd25b-277e-486c-bcc2-a25a3463724b"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="30" width="100" height="30" uuid="b9b3f1c0-b002-4d2c-bf57-d6dc3816220a"/>
+				<text><![CDATA[numSerie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="30" width="100" height="30" uuid="d726e1e4-8118-4575-afbe-e98341d1e57a"/>
+				<text><![CDATA[tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="30" width="100" height="30" uuid="23393584-e0ca-44e3-a0d9-192813118b9d"/>
+				<text><![CDATA[marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="30" width="100" height="30" uuid="ea688094-6cc8-4ef9-b8b9-e0c01a2d3846"/>
+				<text><![CDATA[modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="30" width="50" height="30" uuid="21e676e2-7cc4-4f34-84cc-2daa09c36b2b"/>
+				<text><![CDATA[unidades]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="530" y="30" width="100" height="30" uuid="2f37c6e8-8fcf-4899-a301-f6e0a6bc4355"/>
+				<text><![CDATA[caracteristicas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="630" y="30" width="100" height="30" uuid="981a2fb6-67de-4243-b4e9-00d50db869c2"/>
+				<text><![CDATA[estatus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="730" y="30" width="100" height="30" uuid="0dad29cb-c559-43a6-ae0f-a9263cf31f49"/>
+				<text><![CDATA[observaciones]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="40" y="0" width="40" height="30" uuid="9acb9040-2d86-4f08-b693-d724e6cf0242"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="100" height="30" uuid="4f622d41-a8d3-4b57-b073-e4e6cdc354d6"/>
+				<textFieldExpression><![CDATA[$F{numSerie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="100" height="30" uuid="3d017033-304a-43d1-8bb5-24758d645bf3"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="a2524b92-b3dc-4c1e-a4c2-77ddc6d52dec"/>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="30" uuid="c7a50f65-1bee-43bc-9328-3f41b687e57f"/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="50" height="30" uuid="46668724-de02-4340-ae27-13787f306f18"/>
+				<textFieldExpression><![CDATA[$F{unidades}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="530" y="0" width="100" height="30" uuid="8d7a0742-dd0b-4ea9-a07d-95ea8f2d51c4"/>
+				<textFieldExpression><![CDATA[$F{caracteristicas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="0" width="100" height="30" uuid="565b3b04-b4ba-4273-8d82-469bd19893ae"/>
+				<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="100" height="30" uuid="f8bc370c-487b-4f29-b1e5-df2fad85be5b"/>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+</jasperReport>

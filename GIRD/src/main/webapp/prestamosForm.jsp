@@ -13,10 +13,10 @@
     <input type="text" name="matriAl" value="${alumno.matriAl}"/>
     <br>
     <label>Fecha de entrega:</label>
-    <input type="text" name="entregaDisp" value="${alumno.entregaDisp}"/>
+    <input type="datetime-local" name="entregaDisp" value="${alumno.entregaDisp}"/>
     <br>
     <label>Fecha de regreso:</label>
-    <input type="text" name="regresoDisp" value="${alumno.regresoDisp}"/>
+    <input type="datetime-local" name="regresoDisp" value="${alumno.regresoDisp}"/>
     <br>
 
     <input type="hidden" name="id" value="${prestamo.id}"/>
