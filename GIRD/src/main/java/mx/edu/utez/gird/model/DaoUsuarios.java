@@ -65,17 +65,18 @@ public class DaoUsuarios implements DaoRepository{
 
     @Override
     public boolean update(int id, Object usrs) {
-
+        Usuarios usu = (Usuarios) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean res = false;
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
         try {
             PreparedStatement stmt =
                     con.prepareStatement("update usuarios set nombre = ?, apellido = ?, tipoUsr = ? where id = ?");
-            stmt.setString(1,usrs.getNombre());
-            stmt.setString(2, usrs.getApellido());
-            stmt.setBoolean(3, usrs.isTipoUsr());
-            stmt.setInt(4,usrs.getId());
+            stmt.setString(1,usu.getNombre());
+            stmt.setString(2, usu.getApellido());
+            stmt.setBoolean(3, usu.isTipoUsr());
+            stmt.setInt(4,usu.getId());
             if(stmt.executeUpdate() > 0) res = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -103,7 +104,9 @@ public class DaoUsuarios implements DaoRepository{
             throw new RuntimeException(e);
         }
     }
-    public boolean insert(Object usr){
+    public boolean insert(Object usrs){
+        Usuarios usu = (Usuarios) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean resultado = false;
         MysqlConector con = new MysqlConector();
         Connection conection = con.connect();
@@ -112,11 +115,11 @@ public class DaoUsuarios implements DaoRepository{
                     conection.prepareStatement(
                             "insert into usuarios(nombre,apellido,email,contra,tipoUsr) " +
                                     "values (?,?,?,sha2(?,224),?)");
-            stmt.setString(1,usr.getNombre());
-            stmt.setString(2,usr.getApellido());
-            stmt.setString(3,usr.getEmail());
-            stmt.setString(4,usr.getContra());
-            stmt.setBoolean(5,usr.isTipoUsr());
+            stmt.setString(1,usu.getNombre());
+            stmt.setString(2,usu.getApellido());
+            stmt.setString(3,usu.getEmail());
+            stmt.setString(4,usu.getContra());
+            stmt.setBoolean(5,usu.isTipoUsr());
             int res = stmt.executeUpdate();
             if(res>=1) resultado=true;
         } catch (SQLException e) {

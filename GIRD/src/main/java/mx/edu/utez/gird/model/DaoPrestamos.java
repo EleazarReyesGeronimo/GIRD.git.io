@@ -35,6 +35,10 @@ public class DaoPrestamos implements DaoRepository{
     }
 
     @Override
+    public Object findOne(int id) {
+        return null;
+    }
+
     public Object findOne(String matriAl) {
         Prestamos pres = new Prestamos();
         MysqlConector con = new MysqlConector();
@@ -62,7 +66,9 @@ public class DaoPrestamos implements DaoRepository{
     }
 
     @Override
-    public boolean update(int id, Prestamos pres) {
+    public boolean update(int id, Object usrs) {
+        Prestamos pres = (Prestamos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean resp = false;
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
@@ -72,9 +78,7 @@ public class DaoPrestamos implements DaoRepository{
             stmt.setString(1,pres.getNomAl());
             stmt.setString(2, pres.getApellAl());
             stmt.setString(3, pres.getMatriAl());
-            stmt.setTimestamp(4,pres.getEntregaDisp());
-            stmt.setTimestamp(5, pres.getDevolucionDisp());
-            stmt.setInt(6, pres.getId());
+            stmt.setInt(4, pres.getId());
             if(stmt.executeUpdate() > 0) resp = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -103,7 +107,9 @@ public class DaoPrestamos implements DaoRepository{
     }
 
     @Override
-    public boolean insert(Prestamos pres){
+    public boolean insert(Object usrs){
+        Prestamos pres = (Prestamos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean resultado = false;
         MysqlConector con = new MysqlConector();
         Connection conection = con.connect();
@@ -114,8 +120,6 @@ public class DaoPrestamos implements DaoRepository{
             stmt.setString(1, pres.getNomAl());
             stmt.setString(2, pres.getApellAl());
             stmt.setString(3, pres.getMatriAl());
-            stmt.setTimestamp(4, pres.getEntregaDisp());
-            stmt.setTimestamp(5, pres.getDevolucionDisp());
             int res = stmt.executeUpdate();
             if(res>=1) resultado=true;
         } catch (SQLException e) {

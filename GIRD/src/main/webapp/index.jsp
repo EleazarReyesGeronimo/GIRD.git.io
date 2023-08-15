@@ -18,28 +18,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/girdpr.png" type="image/gif" />
+    <link rel="icon" href="assets/images/girdpr.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="assets/https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="assets/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="assets/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
 <!-- end header -->
 <!-- header -->
@@ -47,37 +47,38 @@
 <header>
     <!-- header inner -->
     <div class="header">
-        <div class="header_to d_none">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <ul class="lan">
-                            <li><i class="fa fa-globe" aria-hidden="true"></i> Idioma: <img src="images/prueba3.png" height="30" width="30"/> Español (Mexico)</li>
-                        </ul>
+              <div class="container">
+                  <div class="row">
+                      <br>
+                      <!--  <div class="header_to d_none">
+                                    <div class="col-md-6 col-sm-6">
+                                        <ul class="lan">
+                                            <li><i class="fa fa-globe" aria-hidden="true"></i> Idioma: <img src="assets/images/prueba3.png" height="30" width="30"/> Español (Mexico)</li>
+                                        </ul>
 
-                    </div>
-                    <div class="col-md-6 col-sm-6 ">
-                        <ul class="social_icon1">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <ul class="social_icon1">
 
-                            <li> <a href="https://www.facebook.com/UTEZ.Morelos?mibextid=2JQ9oc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li> <a href="https://twitter.com/utez_morelos?s=20"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="https://www.youtube.com/@utez.morelos/featured"><i class="fa fa-youtube"></i></a></li>
-                            <li> <a href="https://instagram.com/utezmorelos?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                            <li> <a href="https://www.facebook.com/UTEZ.Morelos?mibextid=2JQ9oc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li> <a href="https://twitter.com/utez_morelos?s=20"><i class="fa fa-twitter"></i></a></li>
+                                            <li> <a href="https://www.youtube.com/@utez.morelos/featured"><i class="fa fa-youtube"></i></a></li>
+                                            <li> <a href="https://instagram.com/utezmorelos?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>-->
+                                </div>
+                          </div>
+                      </div>
         <div class="header_midil">
             <div class="container">
                 <div class="row d_flex">
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon">
-                            <li><a><i class="#" aria-hidden="true"></i><img src="images/datid.png"></a> </li>
+                            <li><a><i class="#" aria-hidden="true"></i><img src="assets/images/datid.png"></a> </li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-4 ">
-                        <center><img src="images/Logo-utez.png" width="200"></center>
+                        <center><img src="assets/images/Logo-utez.png" width="200"></center>
                     </div>
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon ">
@@ -121,7 +122,7 @@
         <br>
         <br>
         <br>
-        <center> <img src="images/girdpr.png" style="width: 20%;"/></center>
+        <center> <img src="assets/images/girdpr.png" style="width: 20%;"/></center>
         <br/>
         <div class="login-panel panel panel-default">
             <div class="panel-heading">
@@ -129,14 +130,19 @@
                     Inicio de sesión
                 </h2>
             </div>
-            <c:if test="${not empty sesion}">
+            <%
+            request.getSession().removeAttribute("sesion");
+            request.getSession().removeAttribute("tipoSesion");
+
+            %>
+            <%--<c:if test="${not empty sesion}">
                 <h1>Bienvenido ${sesion.nombre}</h1>
                 <c:if test="${not empty tipoSesion}">
                     <h1>Eres un usuario tipo ${tipoSesion}</h1>
                 </c:if>
             </c:if>
             <c:if test="${empty sesion}">
-            </c:if>
+            </c:if>--%>
             <div class="panel-body">
                 <form ng-submit="iniciarSesion()" role="form" method="post" name="formLogin" action="login" ng-submit="formLogin.$valid" >
                     <fieldset>
@@ -173,7 +179,7 @@
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <h3>Contacto</h3>
                     <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Palo Escrito 62760
+                        <li><a href="https://goo.gl/maps/FnkGcw8AHjHUGxjRA"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Palo Escrito 62760
                             <br> Emiliano Zapata Morelos
                         </li>
                         <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i> Utez.edu.mx</a> </li>
@@ -208,14 +214,14 @@
 </footer>
 <!-- end footer -->
 <!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery-3.0.0.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/custom.js"></script>
 <c:if test="${not empty msg}">
     <script>
         alert('${msg}');

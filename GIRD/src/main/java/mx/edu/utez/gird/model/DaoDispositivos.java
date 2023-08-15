@@ -67,7 +67,9 @@ public class DaoDispositivos implements DaoRepository{
     }
 
     @Override
-    public boolean update(int id, Dispositivos usr) {
+    public boolean update(int id, Object usrs) {
+        Dispositivos disp = (Dispositivos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean resp = false;
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
@@ -75,15 +77,15 @@ public class DaoDispositivos implements DaoRepository{
 
             PreparedStatement stmt = con.prepareStatement("update dispositivos set numSerie = ?, tipo = ?, marca = ?, " +
                     "modelo = ?, unidades = ?, caracteristicas = ?, estatus = ?, observaciones = ? where id = ?");
-            stmt.setString(1,usr.getNumSerie());
-            stmt.setString(2,usr.getTipo());
-            stmt.setString(3,usr.getMarca());
-            stmt.setString(4,usr.getModelo());
-            stmt.setInt(5,usr.getUnidades());
-            stmt.setString(6,usr.getCaracteristicas());
-            stmt.setString(7,usr.getEstatus());
-            stmt.setString(8,usr.getObservaciones());
-            stmt.setInt(9,usr.getId());
+            stmt.setString(1,disp.getNumSerie());
+            stmt.setString(2,disp.getTipo());
+            stmt.setString(3,disp.getMarca());
+            stmt.setString(4,disp.getModelo());
+            stmt.setInt(5,disp.getUnidades());
+            stmt.setString(6,disp.getCaracteristicas());
+            stmt.setString(7,disp.getEstatus());
+            stmt.setString(8,disp.getObservaciones());
+            stmt.setInt(9,disp.getId());
             if(stmt.executeUpdate() > 0) resp = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -112,7 +114,9 @@ public class DaoDispositivos implements DaoRepository{
     }
 
     @Override
-    public boolean insert(Dispositivos usr){
+    public boolean insert(Object usrs){
+        Dispositivos disp = (Dispositivos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
         boolean resultado = false;
         MysqlConector con = new MysqlConector();
         Connection conection = con.connect();
@@ -121,14 +125,14 @@ public class DaoDispositivos implements DaoRepository{
                     conection.prepareStatement(
                             "insert into dispositivos (numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus," +
                                     "observaciones) values (?,?,?,?,?,?,?,?)");
-            stmt.setString(1,usr.getNumSerie());
-            stmt.setString(2,usr.getTipo());
-            stmt.setString(3,usr.getMarca());
-            stmt.setString(4,usr.getModelo());
-            stmt.setInt(5,usr.getUnidades());
-            stmt.setString(6,usr.getCaracteristicas());
-            stmt.setString(7,usr.getEstatus());
-            stmt.setString(8,usr.getObservaciones());
+            stmt.setString(1,disp.getNumSerie());
+            stmt.setString(2,disp.getTipo());
+            stmt.setString(3,disp.getMarca());
+            stmt.setString(4,disp.getModelo());
+            stmt.setInt(5,disp.getUnidades());
+            stmt.setString(6,disp.getCaracteristicas());
+            stmt.setString(7,disp.getEstatus());
+            stmt.setString(8,disp.getObservaciones());
             int res = stmt.executeUpdate();
             if(res>=1) resultado=true;
         } catch (SQLException e) {

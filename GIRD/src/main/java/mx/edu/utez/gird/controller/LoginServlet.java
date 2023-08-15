@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String correo = req.getParameter("email");
+        String correo = req.getParameter("correo");
         String contra = req.getParameter("contra");
         String redirect = "index.jsp";
 

@@ -28,12 +28,13 @@ create table usuarios(
 );
 
 create table prestamos(
-nomAl varchar (30),
-apellAl varchar (40),
-matriAl varchar (10),
-fecha datetime not null,
-id_dispositivos int,
-foreign key (id_dispositivos) references dispositivos(id)
+    nomAl varchar (30) not null,
+    apellAl varchar (40) not null,
+    matriAl varchar (10) not null,
+    entregaDisp timestamp,
+    devolucionDisp timestamp,
+    id_dispositivos int,
+    foreign key (id_dispositivos) references dispositivos(id)
 );
 
 /*Routers*/
@@ -69,8 +70,8 @@ insert into dispositivos(numSerie, tipo, marca, modelo, unidades, caracteristica
 insert into dispositivos(numSerie, tipo, marca, modelo, unidades, caracteristicas, estatus, observaciones) values('5401EL/13/011', 'AP Ligero', 'Cisco', 'AIR-LAP124AG-N-K9', '1', 'Punto de acceso inalámbrico, Protocolo de gestión remota: SNMP, Telnet, HTTP, HTTPS','disponible','N/A');
 
 /*Usuarios*/
-insert into usuarios(nombre, apellido, email, contra) values('Becario','Alcon', 'becario1@utez.edu.mx', sha2('123',224));
-insert into usuarios(nombre, apellido, email, contra) values('Administrador','Alcon', 'admin1@utez.edu.mx', sha2('321',224));
+insert into usuarios(nombre, apellido, email, contra, tipoUsr) values('Becario','Alcon', 'becario1@utez.edu.mx', sha2('123',224), 0);
+insert into usuarios(nombre, apellido, email, contra, tipoUsr) values('Administrador','Alcon', 'admin1@utez.edu.mx', sha2('321',224), 1);
 
 select * from dispositivos;
 select * from usuarios;

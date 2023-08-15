@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa7d2c48-8ef6-4627-bcf8-45077e2d45d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos - copia.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/HistorialServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/HistorialServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/model/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/model/Usuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/prestamosForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/prestamosForm.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Tym4j9uykwtsPLsqqEE2gWSDUA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User1/Documents/repositorios/GIRD.git.io&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa7d2c48-8ef6-4627-bcf8-45077e2d45d0" name="Changes" comment="" />
+      <created>1692023505875</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692023505875</updated>
+      <workItem from="1692023506954" duration="3118000" />
+      <workItem from="1692031652005" duration="344000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

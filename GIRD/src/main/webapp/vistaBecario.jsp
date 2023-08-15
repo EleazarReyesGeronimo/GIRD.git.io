@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -116,7 +116,7 @@
                 <div class="text-bg">
                     <img src="images/girdpr.png" width="400"><br><br>
 
-                    <span>R E G I S T R A R <br><br> U S U A R I O</span>
+                    <span>R E G I S T R A R <br><br> A L U M N O</span>
                 </div>
             </div>
         </div>
@@ -216,5 +216,98 @@
 <!-- sidebar -->
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/custom.js"></script>
+</body>
+</html>--%>
+<%@ page import="mx.edu.utez.gird.model.DaoDispositivos" %>
+<%@ page import="mx.edu.utez.gird.model.DaoPrestamos" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="header.jsp"/>
+<body>
+<%--<c:if user="${isAdmin}">
+  <c:if user="${not empty sesion}">--%>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table-hover">
+                <thead>
+                <tr>
+                    <th>Numero de Serie</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Unidades</th>
+                    <th>Características</th>
+                    <th>Estatus</th>
+                    <th>Observaciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%
+                    request.getSession().removeAttribute("dispositivos");
+                    DaoDispositivos dao = new DaoDispositivos();
+                    request.getSession().setAttribute("dispositivos",dao.findAll());
+                %>
+                <c:forEach items="${dispositivos}" var="u">
+                    <tr>
+                        <td>${u.numSerie}</td>
+                        <td>${u.tipo}</td>
+                        <td>${u.marca}</td>
+                        <td>${u.modelo}</td>
+                        <td>${u.unidades}</td>
+                        <td>${u.caracteristicas}</td>
+                        <td>${u.estatus}</td>
+                        <td>${u.observaciones}</td>
+                        <!--<td>***</td>-->
+                        <td><a class="btn btn-warning"
+                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
+                        <td><a class="btn btn-danger"
+                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=delete">X</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table-hover">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Matrícula</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%
+                    request.getSession().removeAttribute("prestamos");
+                    DaoPrestamos daop = new DaoPrestamos();
+                    request.getSession().setAttribute("prestamos",daop.findAll());
+                %>
+                <c:forEach items="${prestamos}" var="u">
+                    <tr>
+                        <td>${u.nomAl}</td>
+                        <td>${u.apellAl}</td>
+                        <td>${u.matriAl}</td>
+                        <td>${u.entregaDisp}</td>
+                        <td>${u.devolucionDisp}</td>
+                        <!--<td>***</td>-->
+                        <td><a class="btn btn-warning"
+                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
+                        <td><a class="btn btn-danger"
+                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=delete">Eliminar</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%--</c:if>
+</c:if>--%>
 </body>
 </html>
