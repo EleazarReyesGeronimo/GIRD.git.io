@@ -146,6 +146,8 @@ public class DaoUsuarios implements DaoRepository{
                 usrs.setEmail(res.getString("email"));
                 usrs.setContra(res.getString("contra"));
                 usrs.setTipoUsr(res.getBoolean("tipoUsr"));
+                System.out.println("nombre:" + usrs.getNombre());
+                System.out.println("tipo:" + usrs.isTipoUsr());
             }
         }catch (SQLException e){
             throw new RuntimeException(e);

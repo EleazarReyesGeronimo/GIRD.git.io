@@ -21,7 +21,8 @@ public class LoginServlet extends HttpServlet {
         DaoUsuarios dao = new DaoUsuarios();
         Usuarios usrs = (Usuarios) dao.findOne(correo,contra);
 
-        if (usrs.getEmail() != correo) { //Que si encontro al usuario
+
+        if (usrs.getEmail() != correo && usrs.getEmail() != null && usrs.getEmail() != "") { //Que si encontro al usuario
             if (usrs.isTipoUsr()){
                 redirect = "vistaAdmin.jsp";
             } else {

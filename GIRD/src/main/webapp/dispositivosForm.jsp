@@ -62,6 +62,9 @@
     </fieldset>
 </section>
 <br><br>
+<%
+    request.getSession().removeAttribute("dispositivo");
+%>
 <jsp:include page="footer.jsp" />
 
 
