@@ -2,7 +2,7 @@
 <%@ page import="mx.edu.utez.gird.model.DaoUsuarios" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="header.jsp"/>
+<%--<jsp:include page="header.jsp"/>--%>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -18,28 +18,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/girdpr.png" type="image/gif" />
+    <link rel="icon" href="assets/images/girdpr.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="assets/https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="assets/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="assets/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
    <c:if test="${tipoSesion == true}">
     <c:if test="${not empty sesion}">
@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <ul class="lan">
-                            <li><i class="fa fa-globe" aria-hidden="true"></i> Idioma: <img src="images/prueba3.png" height="30" width="30"/> Español (Mexico)</li>
+                            <li><i class="fa fa-globe" aria-hidden="true"></i> Idioma: <img src="assets/images/prueba3.png" height="30" width="30"/> Español (Mexico)</li>
                         </ul>
                     </div>
                     <div class="col-md-6 col-sm-6 ">
@@ -73,11 +73,11 @@
                 <div class="row d_flex">
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon">
-                            <li><a><i class="#" aria-hidden="true"></i><img src="images/datid.png"></a> </li>
+                            <li><a><i class="#" aria-hidden="true"></i><img src="assets/images/datid.png"></a> </li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-4 ">
-                        <center><img src="images/Logo-utez.png" width="200"></center>
+                        <center><img src="assets/images/Logo-utez.png" width="200"></center>
                     </div>
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon ">
@@ -119,7 +119,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-bg">
-                    <img src="images/girdpr.png" width="400"><br><br>
+                    <img src="assets/images/girdpr.png" width="400"><br><br>
 
                     <span>D I S P O S I T I V O S</span>
                 </div>
@@ -171,7 +171,7 @@
                 </div>-->
                 <button><a class="btn btn-outline-danger"href="/GIRD_war_exploded/DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
             </td>
-            <td> <button><a class="btn btn-outline-warning" href="/GIRD_war_exploded/DispositivoServlet?id=${u.id}&operacion=update">Modificar Usuario</a></button></td>
+            <td> <button><a class="btn btn-outline-warning" href="/GIRD_war_exploded/DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
         </tr>
     </c:forEach>
     </tbody>
@@ -189,7 +189,7 @@
 <!--  footer -->
     </c:if>
 </c:if>
-<c:if test="${tipoSesion != false}">
+<c:if test="${tipoSesion != true}">
 
     <h1>No tienes permiso para ver esta página.</h1>
 </c:if>
@@ -241,14 +241,14 @@
 </footer>
 <!-- end footer -->
 <!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery-3.0.0.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/custom.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
 </html>
