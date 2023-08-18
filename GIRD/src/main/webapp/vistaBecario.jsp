@@ -1,4 +1,4 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -217,12 +217,13 @@
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/custom.js"></script>
 </body>
-</html>--%>
+</html>
 <%@ page import="mx.edu.utez.gird.model.DaoDispositivos" %>
 <%@ page import="mx.edu.utez.gird.model.DaoPrestamos" %>
+<%@ page import="mx.edu.utez.gird.model.Dispositivos" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="header.jsp"/>
+<%--<jsp:include page="header.jsp"/>--%>
 <body>
 <%--<c:if user="${isAdmin}">
   <c:if user="${not empty sesion}">--%>
@@ -259,10 +260,15 @@
                         <td>${u.estatus}</td>
                         <td>${u.observaciones}</td>
                         <!--<td>***</td>-->
-                        <td><a class="btn btn-warning"
-                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
-                        <td><a class="btn btn-danger"
-                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=delete">X</a></td>
+                        <c:choose>
+                            <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'no disponible'}">
+                                <td></td> <!-- Celda vacía en lugar del botón -->
+                            </c:when>
+                            <c:otherwise>
+                                <td><a class="btn btn-warning"
+                                       href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -275,6 +281,28 @@
     <div class="row">
         <div class="col">
             <table class="table-hover">
+                <!-- ... tu código anterior ... -->
+
+                <h2>Préstamos Activos</h2>
+                <c:forEach items="${dispositivos}" var="u">
+                    <c:if test="${u.estatus eq 'prestado' || u.estatus eq 'en espera'}">
+                        <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
+                        <p>Nombre: ${u.nombre}</p>
+                        <p>Apellido: ${u.apellido}</p>
+                        <p>Matrícula: ${u.matricula}</p>
+                        <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
+                        <form action="PrestamoServlet" method="post">
+                            <input type="hidden" name="id" value="${u.id}" />
+                            <input type="hidden" name="operacion" value="devolucion" />
+                            <input type="submit" value="Devolver" />
+                        </form>
+                        <hr>
+                    </c:if>
+                </c:forEach>
+
+                <!-- ... tu código posterior ... -->
+
+            <%--
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -295,14 +323,13 @@
                         <td>${u.matriAl}</td>
                         <td>${u.entregaDisp}</td>
                         <td>${u.devolucionDisp}</td>
-                        <!--<td>***</td>-->
                         <td><a class="btn btn-warning"
-                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
-                        <td><a class="btn btn-danger"
-                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=delete">Eliminar</a></td>
+                               href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=update">Devolver</a></td>
+
                     </tr>
                 </c:forEach>
                 </tbody>
+                --%>
             </table>
         </div>
     </div>

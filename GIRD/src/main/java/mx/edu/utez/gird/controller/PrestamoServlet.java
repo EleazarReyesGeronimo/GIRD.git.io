@@ -19,7 +19,7 @@ public class PrestamoServlet extends HttpServlet {
         String operacion = req.getParameter("operacion");
         String respuesta = "";
 
-        if (operacion.equals("delete")){
+        if (operacion.equals("prestar")){
             DaoPrestamos dao = new DaoPrestamos();
             dao.delete(Integer.parseInt(req.getParameter("id")));
             respuesta = "vistaAdmin.jsp";
