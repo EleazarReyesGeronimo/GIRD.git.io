@@ -266,7 +266,7 @@
                             </c:when>
                             <c:otherwise>
                                 <td><a class="btn btn-warning"
-                                       href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
+                                       href="/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
                             </c:otherwise>
                         </c:choose>
                     </tr>

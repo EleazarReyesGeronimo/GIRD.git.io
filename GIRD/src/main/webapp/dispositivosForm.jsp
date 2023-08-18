@@ -4,7 +4,7 @@
 <br><br><br>
 <section>
     <fieldset>
-        <form class="row g-3 " method="post" action="/GIRD_war_exploded/DispositivoServlet">
+        <form class="row g-3 " method="post" action="DispositivoServlet">
 
             <div class="col-md-4">
                 <label for="validationServer06" class="form-label"><h3><strong>No. DE SERIE =</strong></h3></label>

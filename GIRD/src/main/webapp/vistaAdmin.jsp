@@ -169,9 +169,9 @@
                     <label class="form-check-label" for="flexCheckDefault">
                     </label>
                 </div>-->
-                <button><a class="btn btn-outline-danger"href="/GIRD_war_exploded/DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
+                <button><a class="btn btn-outline-danger"href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
             </td>
-            <td> <button><a class="btn btn-outline-warning" href="/GIRD_war_exploded/DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
+            <td> <button><a class="btn btn-outline-warning" href="DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
         </tr>
     </c:forEach>
     </tbody>

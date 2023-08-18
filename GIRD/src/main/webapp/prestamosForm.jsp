@@ -2,7 +2,7 @@
 <jsp:include page="header.jsp" />
 
 <body>
-<form class="form-control" method="post" action="PrestamoServlet">
+<form class="form-control" method="post" action="/PrestamoServlet">
     <label>Nobre:</label>
     <input type="text" name="nomAl" value="${alumno.nomAl}"/>
     <br>
