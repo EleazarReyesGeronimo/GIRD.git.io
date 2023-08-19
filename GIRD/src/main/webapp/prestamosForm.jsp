@@ -3,21 +3,21 @@
 
 <body>
 <form class="form-control" method="post" action="/PrestamoServlet">
-    <label>Nobre:</label>
+    <label>Nombre:</label>
     <input type="text" name="nomAl" value="${alumno.nomAl}"/>
     <br>
-    <label>Apemllido:</label>
+    <label>Apellido:</label>
     <input type="text" name="apellAl" value="${alumno.apellAl}"/>
     <br>
     <label>Matrícula:</label>
     <input type="text" name="matriAl" value="${alumno.matriAl}"/>
     <br>
-    <!--<label>Fecha de entrega:</label>
+    <%--<label>Fecha de entrega:</label>
     <input type="datetime-local" name="entregaDisp" value="${alumno.entregaDisp}"/>
     <br>
     <label>Fecha de regreso:</label>
     <input type="datetime-local" name="regresoDisp" value="${alumno.regresoDisp}"/>
-    <br>-->
+    <br>--%>
 
     <input type="hidden" name="id" value="${prestamo.id}"/>
     <input type="submit" value="Registrar"/>

@@ -36,7 +36,7 @@
     <script src="assets/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
-<body class="main-layout">
+<header class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
@@ -178,10 +178,58 @@
 
 </table>
 <center><button type="button" class="btn btn-outline-primary"> <a href="dispositivosForm.jsp">Registrar Nuevo Dispositivo</a> </button> </center>
-</div>
-</div>
-</div>
-</div>
+
+    <%--<br>
+<br>
+<br>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr align="center">
+        <th scope="col"><h1><strong><font face="Impac">Nombre</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Apellido</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Email</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Contraseña</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Tipo de usuario</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Eliminar</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Modificar</font> </strong></h1></th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <%
+        request.getSession().removeAttribute("usuarios");
+        DaoDispositivos daoU = new DaoDispositivos();
+        request.getSession().setAttribute("usuarios",dao.findAll());
+    %>
+    <c:forEach items="${usuarios}" var="u">
+        <tr>
+            <td>${u.nombre}</td>
+            <td>${u.apellido}</td>
+            <td>${u.email}</td>
+            <td>${u.contra}</td>
+            <td>${u.tipoUsr}</td>
+            <td>
+                <!--<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  >
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
+                </div>-->
+                <button><a class="btn btn-outline-danger"href="UsuarioServlet?id=${u.id}&operacion=delete">Eliminar Usuario</a></button>
+            </td>
+            <td> <button><a class="btn btn-outline-warning" href="UsuarioServletServlet?id=${u.id}&operacion=update">Modificar Usuario</a></button></td>
+        </tr>
+    </c:forEach>
+    </tbody>
+
+</table>
+        <center><button type="button" class="btn btn-outline-primary"> <a href="usuariosForm.jsp">Registrar Nuevo Usuario</a> </button> </center>
+--%>
+
+        </div>
+        </div>
+        </div>
+        </div>
 <!-- about section -->
 
 <!-- end banner -->
@@ -192,6 +240,7 @@
 <c:if test="${tipoSesion != true}">
 
     <h1>No tienes permiso para ver esta página.</h1>
+
 </c:if>
 <footer>
     <div class="footer">
@@ -240,6 +289,7 @@
     </div>
 </footer>
 <!-- end footer -->
+
 <!-- Javascript files-->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>

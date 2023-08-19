@@ -3,38 +3,39 @@ create database inventario;
 use inventario;
 
 create table dispositivos(
-                             id int not null auto_increment,
-                             numSerie varchar(20) not null,
-                             tipo varchar(20) not null,
-                             marca varchar(50) not null,
-                             modelo varchar(50) not null,
-                             unidades int not null,
-                             caracteristicas varchar(250) not null,
-                             estatus varchar(50),
-                             observaciones varchar(250),
-                             unique (numSerie),
-                             primary key (id)
+    id int not null auto_increment,
+    numSerie varchar(20) not null,
+    tipo varchar(20) not null,
+    marca varchar(20) not null,
+    modelo varchar(20) not null,
+    unidades int not null,
+    caracteristicas varchar(250) not null,
+    estatus varchar(50),
+    observaciones varchar(250),
+    unique (numSerie),
+    primary key (id)
 );
 
 create table usuarios(
-                         id int not null auto_increment,
-                         nombre varchar(20) not null,
-                         apellido varchar(20) not null,
-                         email varchar(20) not null,
-                         contra varchar (224) not null,
-                         tipoUsr boolean,
-                         unique (email),
-                         primary key (id)
+    id int not null auto_increment,
+    nombre varchar(20) not null,
+    apellido varchar(20) not null,
+    email varchar(20) not null,
+    contra varchar (224) not null,
+    tipoUsr boolean,
+    unique (email),
+    primary key (id)
 );
 
-create table prestamos(   id int primary key not null auto_increment,
-                          nomAl varchar (30) not null,
-                          apellAl varchar (40) not null,
-                          matriAl varchar (10) not null,
-                          entregaDisp timestamp,
-                          devolucionDisp timestamp,
-                          id_dispositivos int,
-                          foreign key (id_dispositivos) references dispositivos(id)
+create table prestamos(
+    id int primary key not null auto_increment,
+    nomAl varchar (30) not null,
+    apellAl varchar (40) not null,
+    matriAl varchar (10) not null,
+    entregaDisp timestamp,
+    devolucionDisp timestamp,
+    id_dispositivos int,
+    foreign key (id_dispositivos) references dispositivos(id)
 );
 
 /*Routers*/
