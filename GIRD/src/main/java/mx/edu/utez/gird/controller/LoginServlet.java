@@ -1,5 +1,7 @@
 package mx.edu.utez.gird.controller;
 
+import mx.edu.utez.gird.model.DaoDispositivos;
+import mx.edu.utez.gird.model.DaoPrestamos;
 import mx.edu.utez.gird.model.DaoUsuarios;
 import mx.edu.utez.gird.model.Usuarios;
 
@@ -26,6 +28,15 @@ public class LoginServlet extends HttpServlet {
             if (usrs.isTipoUsr()){
                 redirect = "vistaAdmin.jsp";
             } else {
+                //aqui iria la lógica para conseguir los dispositivos y los prestamos para mostrarlos en vistaBecario
+
+                req.getSession().removeAttribute("dispositivos");
+                DaoDispositivos daoDispositivos = new DaoDispositivos();
+                req.getSession().setAttribute("dispositivos",daoDispositivos.findAll());
+                req.getSession().removeAttribute("prestamos");
+                DaoPrestamos daoPrestamos = new DaoPrestamos();
+                req.getSession().setAttribute("prestamos",daoPrestamos.findAll());
+
                 redirect="vistaBecario.jsp";
             }
             req.getSession().setAttribute("tipoSesion", usrs.isTipoUsr());

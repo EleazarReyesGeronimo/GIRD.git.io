@@ -31,8 +31,6 @@ create table prestamos(   id int primary key not null auto_increment,
                           nomAl varchar (30) not null,
                           apellAl varchar (40) not null,
                           matriAl varchar (10) not null,
-                          entregaDisp timestamp,
-                          devolucionDisp timestamp,
                           id_dispositivos int,
                           foreign key (id_dispositivos) references dispositivos(id)
 );

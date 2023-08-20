@@ -14,12 +14,20 @@ public class Prestamos {
 
     private Timestamp devolucionDisp;
 
-    public Prestamos(int id, String nomAl, String apellAl, String matriAl, Timestamp entregaDisp, Timestamp devolucionDisp) {
+    private Dispositivos dispositivos;
+
+    public Dispositivos getDispositivos() {
+        return dispositivos;
+    }
+
+    public void setDispositivos(Dispositivos dispositivos) {
+        this.dispositivos = dispositivos;
+    }
+
+    public Prestamos(int id, String nomAl, String apellAl, String matriAl) {
         this.nomAl = nomAl;
         this.apellAl = apellAl;
         this.matriAl = matriAl;
-        this.entregaDisp = entregaDisp;
-        this.devolucionDisp = devolucionDisp;
     }
 
     public Prestamos() {

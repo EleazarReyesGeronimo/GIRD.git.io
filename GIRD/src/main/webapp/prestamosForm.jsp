@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="header.jsp" />
+<%--<jsp:include page="header.jsp" />--%>
 
 <body>
 <form class="form-control" method="post" action="/PrestamoServlet">
@@ -18,8 +18,8 @@
     <label>Fecha de regreso:</label>
     <input type="datetime-local" name="regresoDisp" value="${alumno.regresoDisp}"/>
     <br>-->
-
-    <input type="hidden" name="id" value="${prestamo.id}"/>
+    <% String id = request.getParameter("id"); %>
+    <input type="hidden" name="id" value="<%=id%>"/>
     <input type="submit" value="Registrar"/>
 </form>
 </body>
