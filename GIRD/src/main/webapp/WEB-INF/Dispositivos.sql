@@ -27,6 +27,14 @@ create table usuarios(
     primary key (id)
 );
 
+<<<<<<< HEAD
+create table prestamos(   id int primary key not null auto_increment,
+                          nomAl varchar (30) not null,
+                          apellAl varchar (40) not null,
+                          matriAl varchar (10) not null,
+                          id_dispositivos int,
+                          foreign key (id_dispositivos) references dispositivos(id)
+=======
 create table prestamos(
     id int primary key not null auto_increment,
     nomAl varchar (30) not null,
@@ -36,6 +44,7 @@ create table prestamos(
     devolucionDisp timestamp,
     id_dispositivos int,
     foreign key (id_dispositivos) references dispositivos(id)
+>>>>>>> e6bb9352e58f6e410d6587edce021762320346f1
 );
 
 /*Routers*/

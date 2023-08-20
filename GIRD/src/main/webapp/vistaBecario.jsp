@@ -227,9 +227,6 @@
 <script src="js/custom.js"></script>
 </body>
 </html>
-<%@ page import="mx.edu.utez.gird.model.DaoDispositivos" %>
-<%@ page import="mx.edu.utez.gird.model.DaoPrestamos" %>
-<%@ page import="mx.edu.utez.gird.model.Dispositivos" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<jsp:include page="header.jsp"/>--%>
@@ -253,11 +250,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <%
-                    request.getSession().removeAttribute("dispositivos");
-                    DaoDispositivos dao = new DaoDispositivos();
-                    request.getSession().setAttribute("dispositivos",dao.findAll());
-                %>
                 <c:forEach items="${dispositivos}" var="u">
                     <tr>
                         <td>${u.numSerie}</td>
@@ -275,7 +267,7 @@
                             </c:when>
                             <c:otherwise>
                                 <td><a class="btn btn-warning"
-                                       href="/PrestamoServlet?id=${u.id}&operacion=insert">Prestar</a></td>
+                                       href="/prestamosForm.jsp?id=${u.id}">Prestar</a></td>
                             </c:otherwise>
                         </c:choose>
                     </tr>
@@ -291,9 +283,8 @@
         <div class="col">
             <table class="table-hover">
                 <!-- ... tu código anterior ... -->
-
                 <h2>Préstamos Activos</h2>
-                <c:forEach items="${dispositivos}" var="u">
+                <c:forEach items="${prestamos}" var="u">
                     <c:if test="${u.estatus eq 'prestado' || u.estatus eq 'en espera'}">
                         <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
                         <p>Nombre: ${u.nombre}</p>
@@ -303,7 +294,7 @@
                         <form action="PrestamoServlet" method="post">
                             <input type="hidden" name="id" value="${u.id}" />
                             <input type="hidden" name="operacion" value="devolucion" />
-                            <input type="submit" value="Devolver" />
+                            <input type="submit" value="Devolver" action />
                         </form>
                         <hr>
                     </c:if>

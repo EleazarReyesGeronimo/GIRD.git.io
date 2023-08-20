@@ -1,6 +1,8 @@
 package mx.edu.utez.gird.controller;
 
+import mx.edu.utez.gird.model.DaoDispositivos;
 import mx.edu.utez.gird.model.DaoPrestamos;
+import mx.edu.utez.gird.model.Dispositivos;
 import mx.edu.utez.gird.model.Prestamos;
 
 import javax.servlet.ServletException;
@@ -19,10 +21,10 @@ public class PrestamoServlet extends HttpServlet {
         String operacion = req.getParameter("operacion");
         String respuesta = "";
 
-        if (operacion.equals("prestar")){
+        if (operacion.equals("insert")){
             DaoPrestamos dao = new DaoPrestamos();
-            dao.delete(Integer.parseInt(req.getParameter("id")));
-            respuesta = "vistaAdmin.jsp";
+            //dao.delete(Integer.parseInt(req.getParameter("id")));
+            respuesta = "";
         }
         if (operacion.equals("update")){
             DaoPrestamos dao = new DaoPrestamos();
@@ -43,20 +45,30 @@ public class PrestamoServlet extends HttpServlet {
         String nomAl = req.getParameter("nomAl");
         String apellAl = req.getParameter("apellAl");
         String matriAl = req.getParameter("matriAl");
-        Timestamp entregaDisp = Timestamp.valueOf(req.getParameter("entregaDisp"));
-        Timestamp devolucionDisp = Timestamp.valueOf(req.getParameter("devolucionDisp"));
+
+        //Timestamp entregaDisp = Timestamp.valueOf(req.getParameter("entregaDisp"));
+        //Timestamp devolucionDisp = Timestamp.valueOf(req.getParameter("devolucionDisp"));
 
 
         DaoPrestamos dao = new DaoPrestamos();
 
-        if(!req.getParameter("id").isEmpty()){
-            int id = Integer.parseInt(req.getParameter("id"));
-            //Es una operacion de update
-            dao.update(id,new Prestamos(id,nomAl,apellAl,matriAl,entregaDisp,devolucionDisp));
-        }else{
-            dao.insert(new Prestamos(0,nomAl,apellAl,matriAl,entregaDisp,devolucionDisp));
-        }
 
-        resp.sendRedirect("vistaAdmin.jsp");
+            int id = Integer.parseInt(req.getParameter("id"));
+            Prestamos pres = new Prestamos();
+            pres.setNomAl(nomAl);
+            pres.setApellAl(apellAl);
+            pres.setMatriAl(matriAl);
+        Dispositivos disp = new Dispositivos();
+        disp.setId(id);
+        pres.setDispositivos(disp);
+
+            dao.insert(pres);
+        req.getSession().removeAttribute("dispositivos");
+        DaoDispositivos daoDispositivos = new DaoDispositivos();
+        req.getSession().setAttribute("dispositivos",daoDispositivos.findAll());
+        req.getSession().removeAttribute("prestamos");
+        DaoPrestamos daoPrestamos = new DaoPrestamos();
+        req.getSession().setAttribute("prestamos",daoPrestamos.findAll());
+        resp.sendRedirect("vistaBecario.jsp");
     }
 }

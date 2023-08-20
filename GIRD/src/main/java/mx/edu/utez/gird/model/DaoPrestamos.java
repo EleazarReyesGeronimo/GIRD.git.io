@@ -15,7 +15,7 @@ public class DaoPrestamos implements DaoRepository{
         MysqlConector con = new MysqlConector();
         Connection connection = con.connect();
         try {
-            PreparedStatement stmt = connection.prepareStatement("select * from prestamos");
+            PreparedStatement stmt = connection.prepareStatement("select * from prestamos join dispositivos on prestamos.id_dispositivos = dispositivos.id");
             ResultSet res = stmt.executeQuery();
             while (res.next()){
                 Prestamos pres = new Prestamos();
@@ -25,6 +25,13 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setMatriAl(res.getString("matriAl"));
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
+                Dispositivos disp = new Dispositivos();
+                disp.setNumSerie(res.getString("numSerie"));
+                disp.setModelo(res.getString("modelo"));
+                disp.setEstatus(res.getString("estatus"));
+                disp.setObservaciones(res.getString("observaciones"));
+                pres.setDispositivos(disp);
+                listaPrestamos.add(pres);
 
             }
         } catch (SQLException e) {
@@ -115,11 +122,12 @@ public class DaoPrestamos implements DaoRepository{
         Connection conection = con.connect();
         try {
             PreparedStatement stmt = conection.prepareStatement(
-                    "insert into prestamos (nomAl, apellAl, matriAl,entregaDisp, devolucionDisp) " +
-                            "values (?,?,?,now(),now())");
+                    "insert into prestamos (nomAl, apellAl, matriAl,entregaDisp, devolucionDisp, id_dispositivos) " +
+                            "values (?,?,?,now(),now(),?)");
             stmt.setString(1, pres.getNomAl());
             stmt.setString(2, pres.getApellAl());
             stmt.setString(3, pres.getMatriAl());
+            stmt.setInt(4,pres.getDispositivos().getId());
             int res = stmt.executeUpdate();
             if(res>=1) resultado=true;
         } catch (SQLException e) {
