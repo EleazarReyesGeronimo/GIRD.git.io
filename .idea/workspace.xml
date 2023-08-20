@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa7d2c48-8ef6-4627-bcf8-45077e2d45d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos - copia.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/HistorialServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/HistorialServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/model/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/model/Usuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/WEB-INF/ReporteDispositivos.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/preadmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/utils/MysqlConector.java" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/java/mx/edu/utez/gird/utils/MysqlConector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/assets/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/assets/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/assets/images/datd.png" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/assets/images/datd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/dispositivosForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/dispositivosForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/prestamosForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/prestamosForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/vistaAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/vistaAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIRD/src/main/webapp/vistaReporte.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GIRD/src/main/webapp/vistaReporte.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +43,95 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User1/Documents/repositorios/GIRD.git.io&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oscar/OneDrive/Escritorio/GIRD.git.io&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web.server&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="f7d2a5b9-7c15-4743-8546-25fca68f7737" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56414" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,6 +142,11 @@
       <updated>1692023505875</updated>
       <workItem from="1692023506954" duration="3118000" />
       <workItem from="1692031652005" duration="344000" />
+      <workItem from="1692501621167" duration="293000" />
+      <workItem from="1692501987873" duration="596000" />
+      <workItem from="1692502637137" duration="268000" />
+      <workItem from="1692502930015" duration="654000" />
+      <workItem from="1692504762214" duration="615000" />
     </task>
     <servers />
   </component>

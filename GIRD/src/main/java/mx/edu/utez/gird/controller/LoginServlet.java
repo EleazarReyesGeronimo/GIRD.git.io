@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 
         if (usrs.getEmail() != correo && usrs.getEmail() != null && usrs.getEmail() != "") { //Que si encontro al usuario
             if (usrs.isTipoUsr()){
-                redirect = "vistaAdmin.jsp";
+                redirect = "preadmin.jsp";
             } else {
                 //aqui iria la lógica para conseguir los dispositivos y los prestamos para mostrarlos en vistaBecario
 
