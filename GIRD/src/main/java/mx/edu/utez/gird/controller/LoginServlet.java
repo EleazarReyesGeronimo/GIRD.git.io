@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 
         if (usrs.getEmail() != correo && usrs.getEmail() != null && usrs.getEmail() != "") { //Que si encontro al usuario
             if (usrs.isTipoUsr()){
-                redirect = "vistaAdmin.jsp";
+                redirect = "preadmin.jsp";
             } else {
                 redirect="vistaBecario.jsp";
             }
