@@ -134,32 +134,39 @@
 <fieldset>
     <form class="row g-3 ">
         <div class="col-md-4">
-            <label for="validationServer06" class="form-label"><h3><strong>NOMBRE =</strong></h3></label>
-            <input type="text" class="form-control-file" id="validationServer06" placeholder="Ingresa tu nombre completo"required>
+            <label for="validationServer06" class="form-label"><h3><strong>NOMBRE:</strong></h3></label>
+            <input type="text" maxlength="20" class="form-control-file" name="nombre" id="validationServer06" placeholder="Ingresa el nombre del usuario" value="${usuario.nombre}" required>
         </div>
 
         <div class="col-md-4">
-            <label for="validationServer01" class="form-label"><h3><strong>MATRICULA =</strong></h3></label>
-            <input type="text" class="form-control-file" id="validationServer01" placeholder="Ingresa tu matricula completa"required>
+            <label for="validationServer01" class="form-label"><h3><strong>APELLIDOS:</strong></h3></label>
+            <input type="text" maxlength="20" class="form-control-file" name="apellido" id="validationServer01" placeholder="Ingresa los apellidos del usuario" value="${usuario.apellido}" required>
         </div>
+
         <div class="col-md-4">
-            <label for="validationServer02" class="form-label"><h3><strong>PRESTAMOS =</strong></h3></label>
-            <input type="text" class="form-control-file" id="validationServer02" placeholder="Ingresa el tipo de prestamos"required>
+            <label for="validationServer02" class="form-label"><h3><strong>CORREO ELECTRONICO:</strong></h3></label>
+            <input type="email" maxlength="20" class="form-control-file" name="email" id="validationServer02" placeholder="Ingresa el email del usuario" value="${usuario.email}" required>
         </div>
         <br><br>
+
         <div class="col-md-4">    <br><br>
-            <label for="validationServer03" class="form-label"><h3><strong>CORREO ELECTRONICO =</strong></h3></label>
-            <input type="email" class="form-control-file" id="validationServer03" placeholder="Ingresa tu correo electronico"required>
+            <label for="validationServer03" class="form-label"><h3><strong>CONTRASEÑA:</strong></h3></label>
+            <input type="password" max="224" class="form-control-file" name="contra" id="validationServer03" placeholder="Ingresa la contraseña de inicio de sesión del usuario" value="${usuario.contra}" required>
         </div>
-        <br><br>
-        <div class="col-md-3">   <br><br>
-            <label for="validationCustom04" class="form-label"><h3><strong>TURNO =</strong></h3></label>
-            <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Turno...</option>
-                <option>Matutino</option>
-                <option>Vespertino</option>
+
+        <div class="col-md-4">    <br><br>
+            <label for="validationServer09" class="form-label"><h3><strong>TIPO DE USUARIO:</strong></h3></label>
+            <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
+            <select class="form-control-file" id="validationServer09" name="tipoUsr" value="${dispositivo.tipoUsr}">
+                <option value=1>Admin</option>
+                <option value=0 selected>Becario</option>
             </select>
         </div>
+
+        <br><br>
+
+        <input type="hidden" name="id" value="${usuario.id}"/>
+
         <div class="col-12" align="center"><br><br>
             <button class="btn btn-primary" type="submit">Agregar Usuario</button>
         </div>

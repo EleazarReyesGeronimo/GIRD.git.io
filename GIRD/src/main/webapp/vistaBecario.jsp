@@ -37,6 +37,8 @@
 <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
 </div>
+<%--<c:if test="${tipoSesion != true}">
+    <c:if test="${not empty sesion}">--%>
 <!-- end loader -->
 <!-- header -->
 <header>
@@ -160,6 +162,13 @@
     </form>
 </fieldset>
 <br><br>
+    <%--</c:if>
+</c:if>
+<c:if test="${tipoSesion == true}">
+
+    <h1>No tienes permiso para ver esta página.</h1>
+
+</c:if>--%>
 <footer>
     <div class="footer">
         <div class="container">

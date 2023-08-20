@@ -104,6 +104,8 @@ public class DaoUsuarios implements DaoRepository{
             throw new RuntimeException(e);
         }
     }
+
+    @Override
     public boolean insert(Object usrs){
         Usuarios usu = (Usuarios) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
         es como castear pero una clase, para saber que se está utilizando*/
