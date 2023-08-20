@@ -34,11 +34,21 @@
             </div>
             <br><br>
 
-            <div class="col-md-4">    <br><br>
+            <%--<div class="col-md-4">    <br><br>
                 <label for="validationServer011" class="form-label"><h3><strong>CARACTERISTICAS:</strong></h3></label>
                 <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..." value="${dispositivo.caracteristicas}" required></textarea>
+                <input type="text" class="form-control-file" id="validationServer011" name="caracteristicas"  value="${dispositivo.caracteristicas}" required>
+            </div>--%>
+
+
+            <div class="col-md-4">
+                <br><br>
+                <label for="validationServer011" class="form-label"><h3><strong>CARACTERISTICAS:</strong></h3></label>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..."  required>value="${dispositivo.caracteristicas}"</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer011" name="caracteristicas"  value="${dispositivo.caracteristicas}" required>--%>
             </div>
+
+
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer09" class="form-label"><h3><strong>ESTADO:</strong></h3></label>
@@ -52,7 +62,7 @@
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer010" class="form-label"><h3><strong>OBSERVACIONES:</strong></h3></label>
-                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..." value="${dispositivo.observaciones}" required></textarea>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..."  required>value="${dispositivo.observaciones}"</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer010" name="observaciones"  value="${dispositivo.observaciones}" required>--%>
             </div>
 
