@@ -117,7 +117,7 @@
 <br>
 <br>
 <center><h1>Servicios Disponibles</h1></center>
-<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaBecario.jsp" class="btn btn-lg btn-success btn-block">U s u a r i o s</a>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="usuariosForm.jsp" class="btn btn-lg btn-success btn-block">U s u a r i o s</a>
 <br>
 <br>
 <a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaAdmin.jsp" class="btn btn-lg btn-success btn-block">D i s p o s i t i v o s</a>

@@ -1,9 +1,4 @@
 
-  Created by IntelliJ IDEA.
-  User: oscar
-  Date: 27/07/2023
-  Time: 11:50 a. m.
-  To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -51,21 +46,7 @@
         <div class="header_to d_none">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <ul class="lan">
-                            <li><i class="fa fa-globe" aria-hidden="true"></i> Idioma: <img src="assets/images/prueba3.png" height="30" width="30"/> Español (Mexico)</li>
-                        </ul>
-
-                    </div>
-                    <div class="col-md-6 col-sm-6 ">
-                        <ul class="social_icon1">
-
-                            <li> <a href="https://www.facebook.com/UTEZ.Morelos?mibextid=2JQ9oc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li> <a href="https://twitter.com/utez_morelos?s=20"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="https://www.youtube.com/@utez.morelos/featured"><i class="fa fa-youtube"></i></a></li>
-                            <li> <a href="https://instagram.com/utezmorelos?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
+                    <br>
                 </div>
             </div>
         </div>
@@ -98,18 +79,20 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="home.jsp"> Home </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="cliente.jsp">Administrador</a>
-                                    </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="usuariosForm.jsp">Registro Usuario</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="preadmin.jsp">Regresar</a>
                                     </li>
                                 </ul>
                             </div>
                         </nav>
+                    </div>
+                    <div class="col-md-3 col-sm-5 d_none">
+                        <ul class="sign">
+                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesion</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -185,8 +168,8 @@
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <h3>Contacto</h3>
                     <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Palo Escrito 62760
-                            <br> Emiliano Zapata Morelos
+                        <li><a href="https://goo.gl/maps/FnkGcw8AHjHUGxjRA"><i class="fa fa-map-marker" aria-hidden="true"></i> Palo Escrito 62760
+                            <br> Emiliano Zapata Morelos</a>
                         </li>
                         <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i> Utez.edu.mx</a> </li>
                         <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +01 (777) 368 11 65</li>
@@ -201,9 +184,8 @@
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <h3>Menus</h3>
                     <ul class="link_icon">
-                        <li class="active"> <a href="home.jsp"> Home</a></li>
-                        <li> <a href="cliente.jsp"></i> Administrador</a></li>
-                        <li> <a href="usuariosForm.jsp"></i> Registro Usuario</a></li>
+                        <li class="active"> <a href="usuariosForm.jsp"> Registro Usuarios</a></li>
+                        <li> <a href="preadmin.jsp"></i> Regresar</a></li>
 
                     </ul>
                 </div>

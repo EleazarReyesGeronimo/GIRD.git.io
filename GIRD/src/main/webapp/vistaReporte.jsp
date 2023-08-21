@@ -117,6 +117,10 @@
     </div>
 
 </section><br>
+<center><h1>Servicios Disponibles </h1></center>
+<form action="HistorialServlet" method="post">
+    <a><button ng-bind="txtBtnIniciar" ng-show="!btnIniciar" ng-disabled="btnIniciar" class="btn btn-lg btn-success btn-block">Descargar Reporte</button></a>
+</form>
 <br>
 <br>
 <h2>Préstamos Activos</h2>
@@ -132,10 +136,7 @@
 </c:forEach>
 <br>
 <br>
-<center><h1>Servicios Disponibles </h1></center>
-<form action="HistorialServlet" method="post">
-    <a><button ng-bind="txtBtnIniciar" ng-show="!btnIniciar" ng-disabled="btnIniciar" class="btn btn-lg btn-success btn-block">Descargar Reporte</button></a>
-</form>
+
 <br>
 <br>
 <br>

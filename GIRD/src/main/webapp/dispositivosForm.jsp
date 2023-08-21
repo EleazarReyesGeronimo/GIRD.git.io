@@ -81,7 +81,7 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="dispositivosForm.jsp">Registro Dispositivo</a>
                                     </li>
-                                    <li class="nav-item active">
+                                    <li class="nav-item ">
                                         <a class="nav-link" href="vistaAdmin.jsp">Regresar</a>
                                     </li>
                                 </ul>

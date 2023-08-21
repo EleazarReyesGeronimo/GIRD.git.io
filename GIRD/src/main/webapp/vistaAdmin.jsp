@@ -41,8 +41,8 @@
 <div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
-   <c:if test="${tipoSesion == true}">
-    <c:if test="${not empty sesion}">
+  <%-- <c:if test="${tipoSesion == true}">
+    <c:if test="${not empty sesion}">--%>
 <!-- end loader -->
 <!-- header -->
 <header>
@@ -88,7 +88,7 @@
                                         <a class="nav-link " href="vistaAdmin.jsp"> Dispositivos </a>
                                     </li>
                                     <li class="nav-item" >
-                                        <a class="nav-link" href="preadmin.jsp"> Administrador </a>
+                                        <a class="nav-link" href="preadmin.jsp"> Regresar </a>
                                     </li>
                                 </ul>
                             </div>
@@ -161,7 +161,8 @@
                     </label>
                 </div>-->
                 <button><a class="btn btn-outline-danger"href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
-            </td>
+
+        </td>
             <td> <button><a class="btn btn-outline-warning" href="DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
         </tr>
     </c:forEach>
@@ -226,13 +227,14 @@
 <!-- end banner -->
 </header>
 <!--  footer -->
-    </c:if>
+   <%--</c:if>
 </c:if>
-<c:if test="${tipoSesion != true}">
+
+<!--<c:if test="${tipoSesion != true}">
 
     <h1>No tienes permiso para ver esta página.</h1>
 
-</c:if>
+</c:if>--%>
 <footer>
     <div class="footer">
         <div class="container">
