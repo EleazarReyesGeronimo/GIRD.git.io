@@ -131,9 +131,9 @@
                 <label class="form-label"><h3><strong>Matricula :</strong></h3></label>
                 <input type="text" maxlength="20" class="form-control-file" name="matriAl"  placeholder="Ingresa la matricula del alumno" value="${alumno.matriAl}" required>            </div>
 
-            <input type="hidden" name="id" value="${prestamo.id}"/>
+            <input type="hidden" name="id" value="<%=request.getParameter("id")%>"/>
             <div class="col-12" align="center"><br><br>
-                <button class="btn btn-primary" type="submit" value="registrar" action="/PrestamoServlet">Registrar Prestamo</button>
+                <button class="btn btn-primary" type="submit" value="registrar" action="PrestamoServlet">Registrar Prestamo</button>
             </div>
         </form>
     </fieldset>

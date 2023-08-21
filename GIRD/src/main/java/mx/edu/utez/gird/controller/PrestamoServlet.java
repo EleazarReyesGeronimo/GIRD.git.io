@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Timestamp;
 
 @WebServlet(name = "PrestamoServlet", value = "/PrestamoServlet")
 public class PrestamoServlet extends HttpServlet {
@@ -23,14 +22,15 @@ public class PrestamoServlet extends HttpServlet {
 
         if (operacion.equals("insert")){
             DaoPrestamos dao = new DaoPrestamos();
-            //dao.delete(Integer.parseInt(req.getParameter("id")));
             respuesta = "";
         }
         if (operacion.equals("update")){
             DaoPrestamos dao = new DaoPrestamos();
-            String matriAl = req.getParameter("matriAl");
-            Prestamos pres = (Prestamos) dao.findOne(matriAl);
-            pres.setMatriAl("matriAl");
+            int id = Integer.parseInt(req.getParameter("id"));
+            Prestamos pres = (Prestamos) dao.findOne(id);
+            Dispositivos disp = pres.getDispositivos();
+            pres.setEstatus(false);
+            disp.setEstatus("Disponible");
             req.getSession().setAttribute("prestamo",pres);
 
             respuesta ="prestamosForm.jsp";
@@ -45,6 +45,7 @@ public class PrestamoServlet extends HttpServlet {
         String nomAl = req.getParameter("nomAl");
         String apellAl = req.getParameter("apellAl");
         String matriAl = req.getParameter("matriAl");
+        boolean estatus = Boolean.parseBoolean(req.getParameter("estatus"));
 
         //Timestamp entregaDisp = Timestamp.valueOf(req.getParameter("entregaDisp"));
         //Timestamp devolucionDisp = Timestamp.valueOf(req.getParameter("devolucionDisp"));
@@ -58,8 +59,10 @@ public class PrestamoServlet extends HttpServlet {
             pres.setNomAl(nomAl);
             pres.setApellAl(apellAl);
             pres.setMatriAl(matriAl);
+            pres.setEstatus(true);
         Dispositivos disp = new Dispositivos();
         disp.setId(id);
+        disp.setEstatus("En espera");
         pres.setDispositivos(disp);
 
             dao.insert(pres);

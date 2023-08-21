@@ -41,19 +41,16 @@ public class DaoPrestamos implements DaoRepository{
         return listaPrestamos;
     }
 
+
     @Override
     public Object findOne(int id) {
-        return null;
-    }
-
-    public Object findOne(String matriAl) {
         Prestamos pres = new Prestamos();
         MysqlConector con = new MysqlConector();
         Connection connection = con.connect();
         try {
             PreparedStatement stmt =
-                    connection.prepareStatement("select * from prestamos where matriAl=?");
-            stmt.setString(1,matriAl);
+                    connection.prepareStatement("select * from prestamos where id=?");
+            stmt.setInt(1,id);
             ResultSet res = stmt.executeQuery();
             if (res.next()) {
                 pres.setId(res.getInt("id"));
@@ -63,7 +60,7 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
             } else {
-                pres.setMatriAl("No existe el dsipositivo con el Num de Serie: "+matriAl);
+                pres.setNomAl("No existe el dsipositivo con el Num de Serie: "+ id);
             }
 
         } catch (SQLException e) {
@@ -80,12 +77,9 @@ public class DaoPrestamos implements DaoRepository{
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
         try {
-            PreparedStatement stmt = con.prepareStatement("update prestamos set nomAl = ?, apellAl = ?, matriAl = ?," +
-                    "entregaDisp = now(), devolucionDisp = now() where id = ?");
-            stmt.setString(1,pres.getNomAl());
-            stmt.setString(2, pres.getApellAl());
-            stmt.setString(3, pres.getMatriAl());
-            stmt.setInt(4, pres.getId());
+            PreparedStatement stmt = con.prepareStatement("update prestamos set devolucionDisp = now(), estatus = ?  where id = ?");
+            stmt.setBoolean(1,false);
+            stmt.setInt(2, pres.getId());
             if(stmt.executeUpdate() > 0) resp = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -123,7 +117,7 @@ public class DaoPrestamos implements DaoRepository{
         try {
             PreparedStatement stmt = conection.prepareStatement(
                     "insert into prestamos (nomAl, apellAl, matriAl,entregaDisp, devolucionDisp, id_dispositivos) " +
-                            "values (?,?,?,now(),now(),?)");
+                            "values (?,?,?,now(),null,?)");
             stmt.setString(1, pres.getNomAl());
             stmt.setString(2, pres.getApellAl());
             stmt.setString(3, pres.getMatriAl());

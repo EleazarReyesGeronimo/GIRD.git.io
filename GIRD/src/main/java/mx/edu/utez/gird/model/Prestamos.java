@@ -13,6 +13,7 @@ public class Prestamos {
     private Timestamp entregaDisp;
 
     private Timestamp devolucionDisp;
+    private boolean estatus;
 
     private Dispositivos dispositivos;
 
@@ -24,10 +25,12 @@ public class Prestamos {
         this.dispositivos = dispositivos;
     }
 
-    public Prestamos(int id, String nomAl, String apellAl, String matriAl) {
+    public Prestamos(int id, String nomAl, String apellAl, String matriAl,boolean estatus) {
+        this.id = id;
         this.nomAl = nomAl;
         this.apellAl = apellAl;
         this.matriAl = matriAl;
+        this.estatus = estatus;
     }
 
     public Prestamos() {
@@ -80,5 +83,13 @@ public class Prestamos {
 
     public void setDevolucionDisp(Timestamp devolucionDisp) {
         this.devolucionDisp = devolucionDisp;
+    }
+
+    public boolean isEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(boolean estatus) {
+        this.estatus = estatus;
     }
 }

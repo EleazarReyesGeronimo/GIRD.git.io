@@ -147,7 +147,7 @@
                         <td>${u.observaciones}</td>
                         <!--<td>***</td>-->
                         <c:choose>
-                            <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'no disponible'}">
+                            <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'Fuera de Servicio'}">
                                 <td></td> <!-- Celda vacía en lugar del botón -->
                             </c:when>
                             <c:otherwise>
@@ -162,19 +162,19 @@
 
 
             <table class="table table-striped table-hover">
-                <!-- ... tu código anterior ... -->
                 <h2>Préstamos Activos</h2>
                 <c:forEach items="${prestamos}" var="u">
-                    <c:if test="${u.estatus eq 'prestado' || u.estatus eq 'en espera'}">
+                    <c:if test="${u.estatus eq true}">
                         <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
                         <p>Nombre: ${u.nombre}</p>
                         <p>Apellido: ${u.apellido}</p>
                         <p>Matrícula: ${u.matricula}</p>
+                        <p>Estatus: ${u.estatus}</p>
                         <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
                         <form action="PrestamoServlet" method="post">
                             <input type="hidden" name="id" value="${u.id}" />
                             <input type="hidden" name="operacion" value="devolucion" />
-                            <input type="submit" value="Devolver" action />
+                            <input type="submit" value="Devolver" action="update" />
                         </form>
                         <hr>
                     </c:if>
