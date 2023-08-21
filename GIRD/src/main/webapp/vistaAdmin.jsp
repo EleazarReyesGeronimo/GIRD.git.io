@@ -44,7 +44,12 @@
 <div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
+<<<<<<< HEAD
 
+=======
+  <%-- <c:if test="${tipoSesion == true}">
+    <c:if test="${not empty sesion}">--%>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <!-- end loader -->
 <!-- header -->
 <header>
@@ -87,7 +92,14 @@
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active" >
+<<<<<<< HEAD
                                         <a class="nav-link" href="vistaAdmin.jsp"> Administrador </a>
+=======
+                                        <a class="nav-link " href="vistaAdmin.jsp"> Dispositivos </a>
+                                    </li>
+                                    <li class="nav-item" >
+                                        <a class="nav-link" href="preadmin.jsp"> Regresar </a>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
                                     </li>
                                 </ul>
                             </div>
@@ -231,7 +243,130 @@
 -->
 <!-- end testimonial -->
 
+<<<<<<< HEAD
 <!--  footer -->
+=======
+        </div>
+    </section>
+    </div>
+</header>
+    <!-- about section -->
+
+<!-- end contact  section -->
+<br><br><br>
+<table class="table table-striped table-hover">
+    <thead>
+    <tr align="center">
+        <th scope="col"><h1><strong><font face="Impac">No. de Serie</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Tipo</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Marca</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Modelo</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Unidades</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Caracteristicas</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Estado</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Observaciones</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Eliminar</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Modificar</font> </strong></h1></th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <%
+        request.getSession().removeAttribute("dispositivos");
+        DaoDispositivos dao = new DaoDispositivos();
+        request.getSession().setAttribute("dispositivos",dao.findAll());
+    %>
+    <c:forEach items="${dispositivos}" var="u">
+        <tr>
+            <td>${u.numSerie}</td>
+            <td>${u.tipo}</td>
+            <td>${u.marca}</td>
+            <td>${u.modelo}</td>
+            <td>${u.unidades}</td>
+            <td>${u.caracteristicas}</td>
+            <td>${u.estatus}</td>
+            <td>${u.observaciones}</td>
+            <td>
+                <!--<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  >
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
+                </div>-->
+                <button><a class="btn btn-outline-danger"href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
+
+        </td>
+            <td> <button><a class="btn btn-outline-warning" href="DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
+        </tr>
+    </c:forEach>
+    </tbody>
+
+</table>
+<center><button type="button" class="btn btn-outline-primary"> <a href="dispositivosForm.jsp">Registrar Nuevo Dispositivo</a> </button> </center>
+
+    <%--<br>
+<br>
+<br>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr align="center">
+        <th scope="col"><h1><strong><font face="Impac">Nombre</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Apellido</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Email</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Contraseña</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Tipo de usuario</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Eliminar</font> </strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Modificar</font> </strong></h1></th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <%
+        request.getSession().removeAttribute("usuarios");
+        DaoDispositivos daoU = new DaoDispositivos();
+        request.getSession().setAttribute("usuarios",dao.findAll());
+    %>
+    <c:forEach items="${usuarios}" var="u">
+        <tr>
+            <td>${u.nombre}</td>
+            <td>${u.apellido}</td>
+            <td>${u.email}</td>
+            <td>${u.contra}</td>
+            <td>${u.tipoUsr}</td>
+            <td>
+                <!--<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  >
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
+                </div>-->
+                <button><a class="btn btn-outline-danger"href="UsuarioServlet?id=${u.id}&operacion=delete">Eliminar Usuario</a></button>
+            </td>
+            <td> <button><a class="btn btn-outline-warning" href="UsuarioServletServlet?id=${u.id}&operacion=update">Modificar Usuario</a></button></td>
+        </tr>
+    </c:forEach>
+    </tbody>
+
+</table>
+        <center><button type="button" class="btn btn-outline-primary"> <a href="usuariosForm.jsp">Registrar Nuevo Usuario</a> </button> </center>
+--%>
+
+        </div>
+        </div>
+        </div>
+        </div>
+<!-- about section -->
+
+<!-- end banner -->
+</header>
+<!--  footer -->
+   <%--</c:if>
+</c:if>
+
+<!--<c:if test="${tipoSesion != true}">
+
+    <h1>No tienes permiso para ver esta página.</h1>
+
+</c:if>--%>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <footer>
     <div class="footer">
         <div class="container">

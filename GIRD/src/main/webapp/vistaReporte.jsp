@@ -1,10 +1,5 @@
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
-  Created by IntelliJ IDEA.
-  User: oscar
-  Date: 27/07/2023
-  Time: 02:09 a. m.
-  To change this template use File | Settings | File Templates.
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -116,123 +111,35 @@
             <div class="text-bg">
                 <img src="assets/images/girdpr.png" width="400"><br><br>
 
-                <span>H I S T O R I A L <br><br> R E P O R T E</span>
+                <span>H I S T O R I A L </span>
             </div>
         </div>
     </div>
-    <center><h2 style="color:white;"><strong>E s t a d o  G e n e r a l</strong> </h2></center>
 
 </section><br>
-<br>
-<br>
-<br>
-<br>
 <center><h1>Servicios Disponibles </h1></center>
 <form action="HistorialServlet" method="post">
     <a><button ng-bind="txtBtnIniciar" ng-show="!btnIniciar" ng-disabled="btnIniciar" class="btn btn-lg btn-success btn-block">Descargar Reporte</button></a>
 </form>
 <br>
 <br>
+<h2>Préstamos Activos</h2>
+<c:forEach items="${prestamos}" var="u">
+        <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo} ${u.observaciones}</p>
+        <p>Nombre: ${u.nombre}</p>
+        <p>Apellido: ${u.apellido}</p>
+        <p>Matrícula: ${u.matricula}</p>
+        <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
+        <form action="PrestamoServlet" method="post">
+            <input type="hidden" name="id" value="${u.id}" />
+        <hr>
+</c:forEach>
 <br>
-<!--
-<div id="team" class="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="team" class="carousel slide team_Carousel " data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#team" data-slide-to="0" class="active"></li>
-                        <li data-target="#team" data-slide-to="1"></li>
-                        <li data-target="#team" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="carousel-caption ">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/prueba1.jpeg" alt="#" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/prueba2.jpeg" alt="#" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6 d_none1">
-                                            <div id="ho_bg" class="team_img ">
-                                                <img src="images/prueba3.jpeg" alt="#" width="80%" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6 d_none1">
-                                            <div id="ho_bg" class="team_img ">
-                                                <img src="images/prueba4.jpeg" alt="10" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/redes.jpg" alt="#" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/redes1.webp" alt="#" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/redes2.webp" alt="#" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6 d_none1">
-                                            <div id="ho_bg" class="team_img ">
-                                                <img src="images/redes3.jpg" alt="#" />
+<br>
 
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div id="ho_bg" class="team_img">
-                                                <img src="images/redes4.webp" alt="#" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#team" role="button" data-slide="prev">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#team" role="button" data-slide="next">
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!-- end testimonial -->
+<br>
+<br>
+<br>
 
 <!--  footer -->
 <footer>

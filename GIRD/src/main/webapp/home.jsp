@@ -157,7 +157,7 @@
                         </div>
                         <div>
                             <label>
-                                <a href="team.html">¿Olvidaste tu contraseña?</a>
+                                <a href="recuperaForm.jsp">¿Olvidaste tu contraseña?</a>
                             </label>
                         </div>
                         <button type="submit" ng-bind="txtBtnIniciar" ng-show="btnIniciar" ng-disabled="formLogin.$pristine || !formLogin.$valid" class="btn btn-lg btn-success btn-block">Iniciar</button>
