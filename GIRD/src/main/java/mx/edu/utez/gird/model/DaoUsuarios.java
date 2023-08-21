@@ -72,11 +72,13 @@ public class DaoUsuarios implements DaoRepository{
         Connection con = conector.connect();
         try {
             PreparedStatement stmt =
-                    con.prepareStatement("update usuarios set nombre = ?, apellido = ?, tipoUsr = ? where id = ?");
+                    con.prepareStatement("update usuarios set nombre = ?, apellido = ?, email = ?, contra = ?, tipoUsr = ? where id = ?");
             stmt.setString(1,usu.getNombre());
             stmt.setString(2, usu.getApellido());
-            stmt.setBoolean(3, usu.isTipoUsr());
-            stmt.setInt(4,usu.getId());
+            stmt.setString(3, usu.getEmail());
+            stmt.setString(4, usu.getContra());
+            stmt.setBoolean(5, usu.isTipoUsr());
+            stmt.setInt(6,usu.getId());
             if(stmt.executeUpdate() > 0) res = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
