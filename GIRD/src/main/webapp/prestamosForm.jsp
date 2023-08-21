@@ -133,7 +133,7 @@
 
             <input type="hidden" name="id" value="${prestamo.id}"/>
             <div class="col-12" align="center"><br><br>
-                <button class="btn btn-primary" type="submit" value="registrar">Registrar Prestamo</button>
+                <button class="btn btn-primary" type="submit" value="registrar" action="/PrestamoServlet">Registrar Prestamo</button>
             </div>
         </form>
     </fieldset>
