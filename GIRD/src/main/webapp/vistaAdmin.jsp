@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: oscar
-  Date: 19/08/2023
-  Time: 07:17 p. m.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,12 +37,6 @@
 <div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
-<<<<<<< HEAD
-
-=======
-  <%-- <c:if test="${tipoSesion == true}">
-    <c:if test="${not empty sesion}">--%>
->>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <!-- end loader -->
 <!-- header -->
 <header>
@@ -92,26 +79,16 @@
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active" >
-<<<<<<< HEAD
                                         <a class="nav-link" href="vistaAdmin.jsp"> Administrador </a>
-=======
-                                        <a class="nav-link " href="vistaAdmin.jsp"> Dispositivos </a>
-                                    </li>
-                                    <li class="nav-item" >
-                                        <a class="nav-link" href="preadmin.jsp"> Regresar </a>
->>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
                                     </li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
                     <div class="col-md-3 col-sm-5 d_none">
-                        <form action="CerrarSesionServlet" method="post">
-                            <input type="submit" value="Cerrar Sesión">
-                        </form>
-                        <!--<ul class="sign">
-                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesión</a></li>
-                        </ul>-->
+                        <ul class="sign">
+                            <li><a class="sign_btn" href="home.jsp"> Cerrar Sesión</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -127,7 +104,7 @@
 <center> <img src="assets/images/girdpr.png" style="width: 20%;"/></center>
 <br>
 <br>
-<center> <p><i><b><h1> <font face="Impac" size="15" color="00008b"> B i e n v e n i d o <br>A d m i n i s t r a d o r </font> </h1></b></i>  </p> </center>
+<center><p><h1><b><i> <font face="Impac" size="15" color="00008b"> B i e n v e n i d o <br>A d m i n i s t r a d o r </font></i></b></h1></p> </center>
 
 <br>
 <br>
@@ -142,231 +119,10 @@
 <a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaReporte.jsp" class="btn btn-lg btn-success btn-block">R e p o r t e</a>
 <br>
 <br>
-<!--
-<div id="team" class="team">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12">
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div id="team" class="carousel slide team_Carousel " data-ride="carousel">
-               <ol class="carousel-indicators">
-                  <li data-target="#team" data-slide-to="0" class="active"></li>
-                  <li data-target="#team" data-slide-to="1"></li>
-                  <li data-target="#team" data-slide-to="2"></li>
-               </ol>
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container">
-                        <div class="carousel-caption ">
-                           <div class="row">
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/prueba1.jpeg" alt="#" />
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/prueba2.jpeg" alt="#" />
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6 d_none1">
-                                 <div id="ho_bg" class="team_img ">
-                                    <img src="images/prueba3.jpeg" alt="#" width="80%" />
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="carousel-caption">
-                           <div class="row">
-                              <div class="col-md-4 col-sm-6 d_none1">
-                                 <div id="ho_bg" class="team_img ">
-                                    <img src="images/prueba4.jpeg" alt="10" />
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/redes.jpg" alt="#" />
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/redes1.webp" alt="#" />
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="carousel-caption">
-                           <div class="row">
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/redes2.webp" alt="#" />
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6 d_none1">
-                                 <div id="ho_bg" class="team_img ">
-                                    <img src="images/redes3.jpg" alt="#" />
 
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/redes4.webp" alt="#" />
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <a class="carousel-control-prev" href="#team" role="button" data-slide="prev">
-                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
-               </a>
-               <a class="carousel-control-next" href="#team" role="button" data-slide="next">
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-               </a>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
--->
 <!-- end testimonial -->
 
-<<<<<<< HEAD
 <!--  footer -->
-=======
-        </div>
-    </section>
-    </div>
-</header>
-    <!-- about section -->
-
-<!-- end contact  section -->
-<br><br><br>
-<table class="table table-striped table-hover">
-    <thead>
-    <tr align="center">
-        <th scope="col"><h1><strong><font face="Impac">No. de Serie</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Tipo</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Marca</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Modelo</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Unidades</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Caracteristicas</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Estado</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Observaciones</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Eliminar</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Modificar</font> </strong></h1></th>
-    </tr>
-    </thead>
-    <tbody align="center">
-    <%
-        request.getSession().removeAttribute("dispositivos");
-        DaoDispositivos dao = new DaoDispositivos();
-        request.getSession().setAttribute("dispositivos",dao.findAll());
-    %>
-    <c:forEach items="${dispositivos}" var="u">
-        <tr>
-            <td>${u.numSerie}</td>
-            <td>${u.tipo}</td>
-            <td>${u.marca}</td>
-            <td>${u.modelo}</td>
-            <td>${u.unidades}</td>
-            <td>${u.caracteristicas}</td>
-            <td>${u.estatus}</td>
-            <td>${u.observaciones}</td>
-            <td>
-                <!--<div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  >
-                    <label class="form-check-label" for="flexCheckDefault">
-                    </label>
-                </div>-->
-                <button><a class="btn btn-outline-danger"href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
-
-        </td>
-            <td> <button><a class="btn btn-outline-warning" href="DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
-        </tr>
-    </c:forEach>
-    </tbody>
-
-</table>
-<center><button type="button" class="btn btn-outline-primary"> <a href="dispositivosForm.jsp">Registrar Nuevo Dispositivo</a> </button> </center>
-
-    <%--<br>
-<br>
-<br>
-
-
-<table class="table table-striped table-hover">
-    <thead>
-    <tr align="center">
-        <th scope="col"><h1><strong><font face="Impac">Nombre</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Apellido</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Email</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Contraseña</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Tipo de usuario</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Eliminar</font> </strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Modificar</font> </strong></h1></th>
-    </tr>
-    </thead>
-    <tbody align="center">
-    <%
-        request.getSession().removeAttribute("usuarios");
-        DaoDispositivos daoU = new DaoDispositivos();
-        request.getSession().setAttribute("usuarios",dao.findAll());
-    %>
-    <c:forEach items="${usuarios}" var="u">
-        <tr>
-            <td>${u.nombre}</td>
-            <td>${u.apellido}</td>
-            <td>${u.email}</td>
-            <td>${u.contra}</td>
-            <td>${u.tipoUsr}</td>
-            <td>
-                <!--<div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  >
-                    <label class="form-check-label" for="flexCheckDefault">
-                    </label>
-                </div>-->
-                <button><a class="btn btn-outline-danger"href="UsuarioServlet?id=${u.id}&operacion=delete">Eliminar Usuario</a></button>
-            </td>
-            <td> <button><a class="btn btn-outline-warning" href="UsuarioServletServlet?id=${u.id}&operacion=update">Modificar Usuario</a></button></td>
-        </tr>
-    </c:forEach>
-    </tbody>
-
-</table>
-        <center><button type="button" class="btn btn-outline-primary"> <a href="usuariosForm.jsp">Registrar Nuevo Usuario</a> </button> </center>
---%>
-
-        </div>
-        </div>
-        </div>
-        </div>
-<!-- about section -->
-
-<!-- end banner -->
-</header>
-<!--  footer -->
-   <%--</c:if>
-</c:if>
-
-<!--<c:if test="${tipoSesion != true}">
-
-    <h1>No tienes permiso para ver esta página.</h1>
-
-</c:if>--%>
->>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <footer>
     <div class="footer">
         <div class="container">
