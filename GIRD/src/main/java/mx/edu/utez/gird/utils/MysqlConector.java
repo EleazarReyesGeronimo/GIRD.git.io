@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 public class MysqlConector {
     final String DBNAME = "inventario",
-            USER = "root",
-            PASSWORD = "root",
+            USER = "admin",
+            PASSWORD = "Cisco123!",
             TIMEZONE = "America/Mexico_City",
             USESSL = "false",
             PUBLICKEY = "true",
             DDLAUTO = "true",
-            HOST = "localhost";
+            HOST = "db-integradora-3e.cbut7p4h51ri.us-east-1.rds.amazonaws.com";
     public Connection connect() {
         String dataSource =
                 String.format("jdbc:mysql://%s:3306/%s?user=%s&password=%s&serverTimezone=%s&useSSL=%s&allowPublicKeyRetrieval=%s&createDatabaseIfNotExist=%s", HOST, DBNAME, USER, PASSWORD, TIMEZONE, USESSL, PUBLICKEY, DDLAUTO);
