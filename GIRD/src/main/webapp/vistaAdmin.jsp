@@ -1,10 +1,13 @@
-<%@ page import="mx.edu.utez.gird.model.DaoDispositivos" %>
-<%@ page import="mx.edu.utez.gird.model.DaoUsuarios" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: oscar
+  Date: 19/08/2023
+  Time: 07:17 p. m.
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<jsp:include page="header.jsp"/>--%>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -36,13 +39,17 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
-<header class="main-layout">
+<body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
 </div>
+<<<<<<< HEAD
+
+=======
   <%-- <c:if test="${tipoSesion == true}">
     <c:if test="${not empty sesion}">--%>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <!-- end loader -->
 <!-- header -->
 <header>
@@ -51,7 +58,7 @@
         <div class="header_to d_none">
             <div class="container">
                 <div class="row">
-                   <br>
+                    <br>
                 </div>
             </div>
         </div>
@@ -85,36 +92,160 @@
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active" >
+<<<<<<< HEAD
+                                        <a class="nav-link" href="vistaAdmin.jsp"> Administrador </a>
+=======
                                         <a class="nav-link " href="vistaAdmin.jsp"> Dispositivos </a>
                                     </li>
                                     <li class="nav-item" >
                                         <a class="nav-link" href="preadmin.jsp"> Regresar </a>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
                                     </li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
                     <div class="col-md-3 col-sm-5 d_none">
-                        <ul class="sign">
-                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesion</a></li>
-                        </ul>
+                        <form action="CerrarSesionServlet" method="post">
+                            <input type="submit" value="Cerrar Sesión">
+                        </form>
+                        <!--<ul class="sign">
+                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesión</a></li>
+                        </ul>-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end header inner -->
-    <section class="banner_main">
-        <div class="container">
-            <div class="row">
-                <div class="text-bg">
-                    <img src="assets/images/girdpr.png" width="400"><br><br>
+</header>
+<!-- end header inner -->
+<!-- end header -->
+<!-- banner -->
+<!-- testimonial -->
+<br>
+<br>
+<center> <img src="assets/images/girdpr.png" style="width: 20%;"/></center>
+<br>
+<br>
+<center> <p><i><b><h1> <font face="Impac" size="15" color="00008b"> B i e n v e n i d o <br>A d m i n i s t r a d o r </font> </h1></b></i>  </p> </center>
 
-                    <span>D I S P O S I T I V O S</span>
-                </div>
+<br>
+<br>
+<br>
+<center><h1>Servicios Disponibles</h1></center>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaUsuarios.jsp" class="btn btn-lg btn-success btn-block">U s u a r i o s</a>
+<br>
+<br>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaDispositivos.jsp" class="btn btn-lg btn-success btn-block">D i s p o s i t i v o s</a>
+<br>
+<br>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaReporte.jsp" class="btn btn-lg btn-success btn-block">R e p o r t e</a>
+<br>
+<br>
+<!--
+<div id="team" class="team">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <div id="team" class="carousel slide team_Carousel " data-ride="carousel">
+               <ol class="carousel-indicators">
+                  <li data-target="#team" data-slide-to="0" class="active"></li>
+                  <li data-target="#team" data-slide-to="1"></li>
+                  <li data-target="#team" data-slide-to="2"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="carousel-caption ">
+                           <div class="row">
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/prueba1.jpeg" alt="#" />
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/prueba2.jpeg" alt="#" />
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 d_none1">
+                                 <div id="ho_bg" class="team_img ">
+                                    <img src="images/prueba3.jpeg" alt="#" width="80%" />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container">
+                        <div class="carousel-caption">
+                           <div class="row">
+                              <div class="col-md-4 col-sm-6 d_none1">
+                                 <div id="ho_bg" class="team_img ">
+                                    <img src="images/prueba4.jpeg" alt="10" />
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/redes.jpg" alt="#" />
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/redes1.webp" alt="#" />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container">
+                        <div class="carousel-caption">
+                           <div class="row">
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/redes2.webp" alt="#" />
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 d_none1">
+                                 <div id="ho_bg" class="team_img ">
+                                    <img src="images/redes3.jpg" alt="#" />
+
+                                 </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                 <div id="ho_bg" class="team_img">
+                                    <img src="images/redes4.webp" alt="#" />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#team" role="button" data-slide="prev">
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+               </a>
+               <a class="carousel-control-next" href="#team" role="button" data-slide="next">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+               </a>
             </div>
-            <center><h2 style="color:white;"><strong>E s t a d o  G e n e r a l</strong> </h2></center>
+         </div>
+      </div>
+   </div>
+</div>
+-->
+<!-- end testimonial -->
 
+<<<<<<< HEAD
+<!--  footer -->
+=======
         </div>
     </section>
     </div>
@@ -235,6 +366,7 @@
     <h1>No tienes permiso para ver esta página.</h1>
 
 </c:if>--%>
+>>>>>>> edbbfa55841db45ae294ba88181a76f28a79afe5
 <footer>
     <div class="footer">
         <div class="container">
@@ -260,10 +392,9 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <h3>Menus</h3>
+                    <h3>Menú</h3>
                     <ul class="link_icon">
-                        <li class="active"> <a href="vistaAdmin.jsp"></i> Dispositivos </a></li>
-                        <li> <a href="preadmin.jsp"></i> Regresar</a></li>
+                        <li class="active"> <a href="vistaAdmin.jsp"> Administrador</a></li>
                     </ul>
                 </div>
             </div>
@@ -280,7 +411,6 @@
     </div>
 </footer>
 <!-- end footer -->
-
 <!-- Javascript files-->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -290,19 +420,6 @@
 <!-- sidebar -->
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/custom.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
 </html>
-<%--
-<form action="HistorialServlet" method="post">
-<button type="submit">Deescargar Reporte</button>
-</form>
-
-<form method="get" action="${pageContext.request.contextPath}/login">
-<input type="submit" value="-Salir-" />
-</form>
---%>
-<!-- seria equivalente hacer:
-<a href="login">-Salir-</a>
--->
 

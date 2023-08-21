@@ -85,7 +85,7 @@
                                         <a class="nav-link" href="vistaReporte.jsp">Reporte</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="preadmin.jsp">Regresar</a>
+                                        <a class="nav-link" href="vistaAdmin.jsp.jsp">Regresar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-3 col-sm-5 d_none">
                         <ul class="sign">
-                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesion</a></li>
+                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,10 +167,10 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <h3>Menus</h3>
+                    <h3>Menú</h3>
                     <ul class="link_icon">
                         <li class="active"> <a href="vistaReporte.jsp"> </i> Reporte</a></li>
-                        <li> <a href="preadmin.jsp"></i> Regresar</a></li>
+                        <li> <a href="vistaAdmin.jsp"></i> Regresar</a></li>
                     </ul>
                 </div>
             </div>

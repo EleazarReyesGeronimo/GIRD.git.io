@@ -30,7 +30,7 @@ public class UsuarioServlet extends HttpServlet {
             usr.setId(id);
             req.getSession().setAttribute("usuario",usr);
 
-            respuesta ="usuarioForm.jsp";
+            respuesta ="usuariosForm.jsp";
         }
 
         //Falta regresar una respuesta
@@ -42,8 +42,12 @@ public class UsuarioServlet extends HttpServlet {
         String nombre = req.getParameter("nombre");
         String apellido = req.getParameter("apellido");
         String email = req.getParameter("email");
-        String contra = req.getParameter("contraseña");
-        boolean tipoUsr = req.equals("tipoUsr");
+        String contra = req.getParameter("contra");
+        //boolean tipoUsr = req.equals("tipoUsr");
+
+        boolean tipoUsr = Boolean.parseBoolean(req.getParameter("tipoUsr"));
+               /* req.setAttribute("tipoUsrVariable", tipoUsr);
+        req.getRequestDispatcher("vistaUsuarios.jsp").forward(req, resp);*/
 
         DaoUsuarios dao = new DaoUsuarios();
 

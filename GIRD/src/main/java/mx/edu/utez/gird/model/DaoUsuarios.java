@@ -131,7 +131,7 @@ public class DaoUsuarios implements DaoRepository{
     }
 
 
-    public Object findOne(String email, String contraseña) {
+    public Object findOne(String email, String contra) {
         Usuarios usrs = new Usuarios();
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
@@ -140,7 +140,7 @@ public class DaoUsuarios implements DaoRepository{
                     con.prepareStatement("select * from usuarios " +
                             "where email = ? AND contra = sha2(?,224)");
             stmt.setString(1,email);
-            stmt.setString(2,contraseña);
+            stmt.setString(2,contra);
             ResultSet res = stmt.executeQuery();
             if(res.next()) {
                 usrs.setNombre(res.getString("nombre"));

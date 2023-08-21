@@ -128,13 +128,13 @@
 
             <div class="col-md-4">
                 <label for="validationServer08" class="form-label"><h3><strong>MARCA:</strong></h3></label>
-                <input type="text" maxlength="20" class="form-control-file" id="validationServer08" name="marca" placeholder="Ingresa la marca del dispositivo" value="${dispositivo.marca}" required>
+                <input type="text" maxlength="50" class="form-control-file" id="validationServer08" name="marca" placeholder="Ingresa la marca del dispositivo" value="${dispositivo.marca}" required>
             </div>
             <br><br>
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer02" class="form-label"><h3><strong>MODELO:</strong></h3></label>
-                <input type="text" maxlength="20" class="form-control-file" id="validationServer02" name="modelo" placeholder="Ingresa el modelo del dispositivo" value="${dispositivo.modelo}" required>
+                <input type="text" maxlength="50" class="form-control-file" id="validationServer02" name="modelo" placeholder="Ingresa el modelo del dispositivo" value="${dispositivo.modelo}" required>
             </div>
             <br><br>
 
@@ -144,11 +144,21 @@
             </div>
             <br><br>
 
-            <div class="col-md-4">    <br><br>
+            <%--<div class="col-md-4">    <br><br>
                 <label for="validationServer011" class="form-label"><h3><strong>CARACTERISTICAS:</strong></h3></label>
                 <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..." value="${dispositivo.caracteristicas}" required></textarea>
+                <input type="text" class="form-control-file" id="validationServer011" name="caracteristicas"  value="${dispositivo.caracteristicas}" required>
+            </div>--%>
+
+
+            <div class="col-md-4">
+                <br><br>
+                <label for="validationServer011" class="form-label"><h3><strong>CARACTERISTICAS:</strong></h3></label>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..."  required>${dispositivo.caracteristicas}"</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer011" name="caracteristicas"  value="${dispositivo.caracteristicas}" required>--%>
             </div>
+
+
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer09" class="form-label"><h3><strong>ESTADO:</strong></h3></label>
@@ -162,7 +172,7 @@
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer010" class="form-label"><h3><strong>OBSERVACIONES:</strong></h3></label>
-                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..." value="${dispositivo.observaciones}" required></textarea>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..."  required>${dispositivo.observaciones}"</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer010" name="observaciones"  value="${dispositivo.observaciones}" required>--%>
             </div>
 
