@@ -105,7 +105,7 @@
                                     <a class="nav-link" href="index.jsp"> Home  </a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="home.jsp">Iniciar Sesion</a>
+                                    <a class="nav-link" href="home.jsp">Iniciar Sesión</a>
                                 </li>
                             </ul>
                         </div>
@@ -196,10 +196,10 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <h3>Menus</h3>
+                    <h3>Menú</h3>
                     <ul class="link_icon">
                         <li class="active"> <a href="index.jsp"> Home</a></li>
-                        <li><a href="home.jsp">Iniciar Sesion</a></li>
+                        <li><a href="home.jsp">Iniciar Sesión</a></li>
                     </ul>
                 </div>
             </div>

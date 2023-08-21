@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-3 col-sm-5 d_none">
                         <ul class="sign">
-                            <li><a class="sign_btn" href="home.jsp"> Iniciar Sesion</a></li>
+                            <li><a class="sign_btn" href="home.jsp"> Iniciar Sesión</a></li>
                         </ul>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="text-bg">
                     <img src="assets/images/girdpr.png" width="400">
                     <span>Cecadec</span>
-                    <p>Gestor De Inventario Y Prestamos De Equipos Electronicos</p>
+                    <p>Gestor de inventario y préstamos de dispositivos electrónicos.</p>
                 </div>
             </div>
             <div class="col-md-5 col-lg-5">
@@ -150,9 +150,9 @@
                     <div class="titlepage">
                         <h2><strong class="yellow">Bienvenido a </strong><br> G I R D</h2>
                     </div>
-                    <h3>Gestor De Inventario Y Prestamos De Equipos Electronicos</h3>
+                    <h3>Gestor De Inventario Y Préstamos De Dispositivos Electrónicos</h3>
                     <span>Este Sistema Es Exclusivo De <br>Cecadec</span>
-                    <p>Aqui podras solicitar cualquier equipo electronico que necesites del area de Redes Digitales </p>
+                    <p>Aquí podrás solicitar cualquier dispositivo electrónico que necesites del área de redes digitales. </p>
                 </div>
             </div>
             <div class="col-md-12 col-lg-5">
@@ -174,7 +174,7 @@
                 <div class="titlepage">
                     <h2><strong class="yellow">UTEZ</strong><br>DATID</h2>
                     <span>División Académica de Tecnologías de la Información y Diseño</span>
-                    <p> En la actualidad ofrece programas educativos de Técnico Superior Universitario (TSU), Licenciatura e Ingeniería además de servicios tecnológicos y proyectos estratégicos que vinculan a la institución con el sector privado, así como cursos de educación continua al público en general, instituciones públicas y privadas.</p>
+                    <p> En la actualidad ofrece programas educativos de Técnico Superior Universitario (TSU), licenciatura e ingeniería, además de servicios tecnológicos y proyectos estratégicos que vinculan a la institución con el sector privado, así como cursos de educación continua al público en general, instituciones públicas y privadas.</p>
                 </div>
             </div>
         </div>
@@ -349,10 +349,10 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <h3>Menus</h3>
+                    <h3>Menú</h3>
                     <ul class="link_icon">
                         <li class="active"> <a href="index.jsp"> Home</a></li>
-                        <li> <a href="home.jsp">Iniciar Sesion</a></li>
+                        <li> <a href="home.jsp">Iniciar Sesión</a></li>
                     </ul>
                 </div>
             </div>

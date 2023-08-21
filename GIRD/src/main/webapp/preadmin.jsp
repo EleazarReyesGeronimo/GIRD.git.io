@@ -111,16 +111,16 @@
 <center> <img src="assets/images/girdpr.png" style="width: 20%;"/></center>
 <br>
 <br>
-<center><p><h1><b><i> <font face="Impac" size="15" color="00008b"> B i e n v e n i d o <br>A d m i n i s t r a d o r </font></br></i></b></h1></p></center>
+<center> <p><i><b><h1> <font face="Impac" size="15" color="00008b"> B i e n v e n i d o <br>A d m i n i s t r a d o r </font> </h1></b></i>  </p> </center>
 
 <br>
 <br>
 <br>
 <center><h1>Servicios Disponibles</h1></center>
-<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaBecario.jsp" class="btn btn-lg btn-success btn-block">U s u a r i o s</a>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaUsuarios.jsp" class="btn btn-lg btn-success btn-block">U s u a r i o s</a>
 <br>
 <br>
-<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaAdmin.jsp" class="btn btn-lg btn-success btn-block">D i s p o s i t i v o s</a>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaDispositivos.jsp" class="btn btn-lg btn-success btn-block">D i s p o s i t i v o s</a>
 <br>
 <br>
 <a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaReporte.jsp" class="btn btn-lg btn-success btn-block">R e p o r t e</a>
@@ -255,7 +255,7 @@
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <h3>Menus</h3>
                     <ul class="link_icon">
-                        <li class="active"> <a href="preadmin.jsp"> Administrador</a></li>
+                        <li class="active"> <a href="vistaAdmin.jsp"> Administrador</a></li>
                     </ul>
                 </div>
             </div>
