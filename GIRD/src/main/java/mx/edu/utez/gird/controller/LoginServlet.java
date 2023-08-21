@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String correo = req.getParameter("correo");
         String contra = req.getParameter("contra");
-        String redirect = "index.jsp";
+        String redirect = "home.jsp";
 
         DaoUsuarios dao = new DaoUsuarios();
         Usuarios usrs = (Usuarios) dao.findOne(correo,contra);
