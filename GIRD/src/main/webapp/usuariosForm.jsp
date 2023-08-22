@@ -142,7 +142,7 @@
             <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
             <select class="form-control-file" id="validationServer09" name="tipoUsr" value="${usuario.tipoUsr}">
                 <option value="true">Administrador</option>
-                <option value="false" selected>Becario</option>
+                <option value="false">Becario</option>
             </select>
         </div>
 
@@ -201,6 +201,9 @@
             </div>
         </div>
     </div>
+    <%
+        request.getSession().removeAttribute("usuario");
+    %>
 </footer>
 <!-- end footer -->
 <!-- Javascript files-->
