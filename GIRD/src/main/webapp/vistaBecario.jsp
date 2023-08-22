@@ -35,9 +35,9 @@
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
-<div class="loader_bg">
+<%--<div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
-</div>
+</div>--%>
 <%--<c:if test="${tipoSesion != true}">
     <c:if test="${not empty sesion}">--%>
 <!-- end loader -->
@@ -121,7 +121,7 @@
 
 <%--<c:if user="${isAdmin}">
   <c:if user="${not empty sesion}">--%>
- <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover">
                 <thead>
                 <tr align="center">
                     <th scope="col"><h1><strong><font face="Impac">Numero de Serie</font></strong></h1></th>
@@ -152,7 +152,7 @@
                             </c:when>
                             <c:otherwise>
                                 <td><a class="btn btn-warning"
-                                       href="prestamosForm.jsp?id=${u.id}">Prestar</a></td>
+                                       href="prestamosForm.jsp?id=${u.id}" action="insertar">Prestar</a></td>
                             </c:otherwise>
                         </c:choose>
                     </tr>
@@ -160,11 +160,42 @@
                 </tbody>
             </table>
 
-
-            <table class="table table-striped table-hover">
+<table class="table table-striped table-hover">
+    <thead>
+    <tr align="center">
+        <th scope="col"><h1><strong><font face="Impac">Nombre</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Apellido</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Matricula</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Fecha de Prestamo</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Fecha de Devolucion</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Estatus</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Tipo</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Marca</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Modelo</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Observaciones</font></strong></h1></th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${prestamos}" var="u">
+        <tr align="center">
+            <td>${u.nomAl}</td>
+            <td>${u.apellAl}</td>
+            <td>${u.matriAl}</td>
+            <td>${u.entregaDisp}</td>
+            <td>${u.devolucionDisp}</td>
+            <td>${u.estatus}</td>
+            <td>${u.tipo}</td>
+            <td>${u.marca}</td>
+            <td>${u.modelo}</td>
+            <td>${u.observaciones}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+           <%-- <table class="table table-striped table-hover">
                 <h2>Préstamos Activos</h2>
                 <c:forEach items="${prestamos}" var="u">
-                    <c:if test="${u.estatus eq true}">
+                    <c:if test="${u.estatus}">
                         <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
                         <p>Nombre: ${u.nombre}</p>
                         <p>Apellido: ${u.apellido}</p>
@@ -179,6 +210,7 @@
                         <hr>
                     </c:if>
                 </c:forEach>
+            </table>--%>
 
                 <!-- ... tu código posterior ... -->
 
@@ -210,7 +242,7 @@
                     </c:forEach>
                     </tbody>
                     --%>
-            </table>
+
 <%--</c:if>
 </c:if>--%>
     <%--</c:if>

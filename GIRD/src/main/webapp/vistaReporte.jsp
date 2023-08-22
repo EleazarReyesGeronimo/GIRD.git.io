@@ -1,4 +1,5 @@
-<%--
+<%@ page import="mx.edu.utez.gird.model.DaoDispositivos" %>
+<%@ page import="mx.edu.utez.gird.model.DaoPrestamos" %><%--
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -120,27 +121,48 @@
 <center><h1>Servicios Disponibles </h1></center>
 <form action="HistorialServlet" method="post">
     <a><button ng-bind="txtBtnIniciar" ng-show="!btnIniciar" ng-disabled="btnIniciar" class="btn btn-lg btn-success btn-block">Descargar Reporte</button></a>
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr align="center">
+            <th scope="col"><h1><strong><font face="Impac">Nombre</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Apellido</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Matricula</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Fecha de Prestamo</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Fecha de Devolucion</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Estatus</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Tipo</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Marca</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Modelo</font></strong></h1></th>
+            <th scope="col"><h1><strong><font face="Impac">Observaciones</font></strong></h1></th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${prestamos}" var="u">
+            <tr align="center">
+                <td>${u.nomAl}</td>
+                <td>${u.apellAl}</td>
+                <td>${u.matriAl}</td>
+                <td>${u.entregaDisp}</td>
+                <td>${u.devolucionDisp}</td>
+                <td>${u.estatus}</td>
+                <td>${u.tipo}</td>
+                <td>${u.marca}</td>
+                <td>${u.modelo}</td>
+                <td>${u.observaciones}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </form>
-<br>
-<br>
-<h2>Préstamos Activos</h2>
-<c:forEach items="${prestamos}" var="u">
-        <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo} ${u.observaciones}</p>
-        <p>Nombre: ${u.nombre}</p>
-        <p>Apellido: ${u.apellido}</p>
-        <p>Matrícula: ${u.matricula}</p>
-        <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
-        <form action="PrestamoServlet" method="post">
-            <input type="hidden" name="id" value="${u.id}" />
-        <hr>
-</c:forEach>
-<br>
-<br>
 
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
 <!--  footer -->
 <footer>
     <div class="footer">

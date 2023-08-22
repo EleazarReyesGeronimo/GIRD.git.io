@@ -48,8 +48,7 @@ public class DaoPrestamos implements DaoRepository{
         MysqlConector con = new MysqlConector();
         Connection connection = con.connect();
         try {
-            PreparedStatement stmt =
-                    connection.prepareStatement("select * from prestamos where id=?");
+            PreparedStatement stmt = connection.prepareStatement("select * from prestamos where id=? join dispositivos on prestamos.id_dispositivos = dispositivos.id");
             stmt.setInt(1,id);
             ResultSet res = stmt.executeQuery();
             if (res.next()) {
@@ -59,6 +58,12 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setMatriAl(res.getString("matriAl"));
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
+                Dispositivos disp = new Dispositivos();
+                disp.setNumSerie(res.getString("numSerie"));
+                disp.setModelo(res.getString("modelo"));
+                disp.setEstatus(res.getString("estatus"));
+                disp.setObservaciones(res.getString("observaciones"));
+                pres.setDispositivos(disp);
             } else {
                 pres.setNomAl("No existe el dsipositivo con el Num de Serie: "+ id);
             }
@@ -116,12 +121,13 @@ public class DaoPrestamos implements DaoRepository{
         Connection conection = con.connect();
         try {
             PreparedStatement stmt = conection.prepareStatement(
-                    "insert into prestamos (nomAl, apellAl, matriAl,entregaDisp, devolucionDisp, id_dispositivos) " +
-                            "values (?,?,?,now(),null,?)");
+                    "insert into prestamos (nomAl, apellAl, matriAl,entregaDisp, devolucionDisp, estatus, id_dispositivos) " +
+                            "values (?,?,?,now(),null,?,?)");
             stmt.setString(1, pres.getNomAl());
             stmt.setString(2, pres.getApellAl());
             stmt.setString(3, pres.getMatriAl());
-            stmt.setInt(4,pres.getDispositivos().getId());
+            stmt.setBoolean(4,pres.isEstatus());
+            stmt.setInt(5,pres.getDispositivos().getId());
             int res = stmt.executeUpdate();
             if(res>=1) resultado=true;
         } catch (SQLException e) {

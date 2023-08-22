@@ -24,7 +24,7 @@ public class HistorialServlet extends HttpServlet {
         Connection con = new MysqlConector().connect();
 
         resp.setContentType("application/pdf");
-        resp.setHeader("Content-Disposition","Attachment; filename=ReporteDispositivos.pdf");
+        resp.setHeader("Content-Disposition","attachment; filename=ReporteDispositivos.pdf");
         try {
             byte[] bytes = JasperRunManager.runReportToPdf(input, mapa, con);
             OutputStream os = resp.getOutputStream();
@@ -35,6 +35,6 @@ public class HistorialServlet extends HttpServlet {
             System.out.println(e.getMessage());
         }
 
-        resp.sendRedirect("vistaAdmin.jsp");
+        resp.sendRedirect("vistaReporte.jsp");
     }
 }
