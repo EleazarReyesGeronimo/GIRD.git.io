@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "PrestamoServlet", value = "/PrestamoServlet")
 public class PrestamoServlet extends HttpServlet {
@@ -67,7 +68,7 @@ public class PrestamoServlet extends HttpServlet {
         req.getSession().setAttribute("dispositivos", daoDispositivos.findAll());
         req.getSession().removeAttribute("prestamos");
         DaoPrestamos daoPrestamos = new DaoPrestamos();
-        req.getSession().setAttribute("prestamos", daoPrestamos.findAll());
+        req.getSession().setAttribute("prestamos", (List<Prestamos>) daoPrestamos.findAll());
         resp.sendRedirect("vistaBecario.jsp");
 
     }

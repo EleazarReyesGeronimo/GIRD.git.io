@@ -127,7 +127,7 @@
 <br>
 
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover col">
     <thead>
     <tr align="center">
         <th scope="col"><h1><strong><font face="Impac">Nombre</font> </strong></h1></th>

@@ -26,7 +26,8 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
                 Dispositivos disp = new Dispositivos();
-                disp.setNumSerie(res.getString("numSerie"));
+                disp.setTipo(res.getString("tipo"));
+                disp.setMarca(res.getString("marca"));
                 disp.setModelo(res.getString("modelo"));
                 disp.setEstatus(res.getString("estatus"));
                 disp.setObservaciones(res.getString("observaciones"));

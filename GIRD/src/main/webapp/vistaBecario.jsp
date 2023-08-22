@@ -184,10 +184,10 @@
             <td>${u.entregaDisp}</td>
             <td>${u.devolucionDisp}</td>
             <td>${u.estatus}</td>
-            <td>${u.tipo}</td>
-            <td>${u.marca}</td>
-            <td>${u.modelo}</td>
-            <td>${u.observaciones}</td>
+            <td>${u.dispositivos.tipo}</td>
+            <td>${u.dispositivos.marca}</td>
+            <td>${u.dispositivos.modelo}</td>
+            <td>${u.dispositivos.observaciones}</td>
         </tr>
     </c:forEach>
     </tbody>
