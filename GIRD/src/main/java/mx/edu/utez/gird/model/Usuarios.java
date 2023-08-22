@@ -7,6 +7,8 @@ public class Usuarios {
     private String email;
     private String contra;
     private boolean tipoUsr;
+    private String tipoUserCadena;
+
 
     public Usuarios() {
     }
@@ -66,5 +68,13 @@ public class Usuarios {
 
     public void setTipoUsr(boolean tipoUsr) {
         this.tipoUsr = tipoUsr;
+    }
+
+    public String getTipoUserCadena() {
+        return tipoUserCadena;
+    }
+
+    public void setTipoUserCadena(String tipoUserCadena) {
+        this.tipoUserCadena = tipoUserCadena;
     }
 }
