@@ -56,7 +56,13 @@ public class UsuarioServlet extends HttpServlet {
             //Es una operacion de update
             dao.update(id,new Usuarios(id,nombre,apellido,email,contra,tipoUsr));
         }else{
-            dao.insert(new Usuarios(0,nombre,apellido,email,contra,tipoUsr));
+            if (req.getParameter("email").equals(req.getParameter("email"))){
+                System.out.println("El usuario con ese email ya existe, registre otro nuevo usuario.");
+                resp.sendRedirect("usuariosForm.jsp");
+            }else {
+                dao.insert(new Usuarios(0,nombre,apellido,email,contra,tipoUsr));
+            }
+
         }
 
         resp.sendRedirect("vistaUsuarios.jsp");

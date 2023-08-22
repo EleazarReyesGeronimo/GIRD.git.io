@@ -1,6 +1,5 @@
 <%@ page import="mx.edu.utez.gird.model.DaoUsuarios" %>
 <%@ page import="mx.edu.utez.gird.model.DaoUsuarios" %>
-<%@ page import="mx.edu.utez.gird.controller.FindAllServlet" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<jsp:include page="header.jsp"/>--%>
@@ -142,8 +141,8 @@
     <tbody align="center">
     <%
         request.getSession().removeAttribute("usuarios");
-        FindAllServlet fao = new FindAllServlet();
-        request.getSession().setAttribute("usuarios",fao.findAll());
+        DaoUsuarios dao = new DaoUsuarios();
+        request.getSession().setAttribute("usuarios",dao.findAll());
     %>
     <c:forEach items="${usuarios}" var="u">
         <tr>
@@ -151,18 +150,7 @@
             <td>${u.apellido}</td>
             <td>${u.email}</td>
             <td>${u.contra}</td>
-
-            <td>
-                <c:choose>
-                    <c:when test="${tipoUsr}">
-                        Administrador
-                    </c:when>
-                    <c:otherwise>
-                        Becario
-                    </c:otherwise>
-                </c:choose>
-            </td>
-
+            <td>${u.tipoUserCadena}</td>
 
             <td>
 

@@ -154,7 +154,7 @@
             <div class="col-md-4">
                 <br><br>
                 <label for="validationServer011" class="form-label"><h3><strong>CARACTERISTICAS:</strong></h3></label>
-                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..."  required>${dispositivo.caracteristicas}"</textarea>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer011" name="caracteristicas" placeholder="Ingresa las características del dispositivo..."  required>${dispositivo.caracteristicas}</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer011" name="caracteristicas"  value="${dispositivo.caracteristicas}" required>--%>
             </div>
 
@@ -172,7 +172,7 @@
 
             <div class="col-md-4">    <br><br>
                 <label for="validationServer010" class="form-label"><h3><strong>OBSERVACIONES:</strong></h3></label>
-                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..."  required>${dispositivo.observaciones}"</textarea>
+                <textarea type="text" maxlength="250" class="form-control-file" id="validationServer010" name="observaciones" placeholder="Ingresa las observaciones requeridas..."  required>${dispositivo.observaciones}</textarea>
                 <%--<input type="text" class="form-control-file" id="validationServer010" name="observaciones"  value="${dispositivo.observaciones}" required>--%>
             </div>
 
