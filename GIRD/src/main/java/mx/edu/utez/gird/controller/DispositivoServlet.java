@@ -21,7 +21,7 @@ public class DispositivoServlet extends HttpServlet {
         if (operacion.equals("delete")){
             DaoDispositivos dao = new DaoDispositivos();
             dao.delete(Integer.parseInt(req.getParameter("id")));
-            respuesta = "vistaAdmin.jsp";
+            respuesta = "vistaDispositivos.jsp";
         }
         if (operacion.equals("update")){
             DaoDispositivos dao = new DaoDispositivos();
@@ -56,9 +56,14 @@ public class DispositivoServlet extends HttpServlet {
             //Es una operacion de update
             dao.update(id,new Dispositivos(id,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
         }else{
-            dao.insert(new Dispositivos(0,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
+            if (req.getParameter("numSerie").equals(req.getParameter("numSerie"))){
+                System.out.println("Este número de serie ya existe, ingrese uno nuevo.");
+                resp.sendRedirect("dispositivosForm.jsp");
+            }else {
+                dao.insert(new Dispositivos(0,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
+            }
         }
 
-        resp.sendRedirect("vistaAdmin.jsp");
+        resp.sendRedirect("vistaDispositivos.jsp");
     }
 }
