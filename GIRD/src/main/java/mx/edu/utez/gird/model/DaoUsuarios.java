@@ -27,6 +27,7 @@ public class DaoUsuarios implements DaoRepository{
                 usrs.setApellido(res.getString("apellido"));
                 usrs.setEmail(res.getString("email"));
                 usrs.setContra(res.getString("contra"));
+                usrs.setTipoUserCadena(res.getBoolean("tipoUsr")? "Administrador" : "Becario");
                 usrs.setTipoUsr(res.getBoolean("tipoUsr"));
                 listaUsuarios.add(usrs);
             }
@@ -157,5 +158,27 @@ public class DaoUsuarios implements DaoRepository{
             throw new RuntimeException(e);
         }
         return usrs;
+    }
+
+    public Usuarios findOne2(String correo){
+        Usuarios usr = new Usuarios();
+        MysqlConector conector = new MysqlConector();
+        Connection con = conector.connect();
+        try{
+            PreparedStatement stmt =
+                    con.prepareStatement("select * from usuarios " +
+                            "where correo = ?");
+            stmt.setString(1,correo);
+            ResultSet res = stmt.executeQuery();
+            if(res.next()) {
+                usr.setId(res.getInt("id"));
+                usr.setNombre(res.getString("nombre"));
+                usr.setEmail(res.getString("email"));
+                usr.setContra(res.getString("contra"));
+            }
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return usr;
     }
 }
