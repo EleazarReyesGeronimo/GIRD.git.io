@@ -47,31 +47,28 @@ public class PrestamoServlet extends HttpServlet {
         String matriAl = req.getParameter("matriAl");
         boolean estatus = Boolean.parseBoolean(req.getParameter("estatus"));
 
-        //Timestamp entregaDisp = Timestamp.valueOf(req.getParameter("entregaDisp"));
-        //Timestamp devolucionDisp = Timestamp.valueOf(req.getParameter("devolucionDisp"));
-
-
-        DaoPrestamos dao = new DaoPrestamos();
-
-
+            DaoPrestamos dao = new DaoPrestamos();
             int id = Integer.parseInt(req.getParameter("id"));
+
             Prestamos pres = new Prestamos();
             pres.setNomAl(nomAl);
             pres.setApellAl(apellAl);
             pres.setMatriAl(matriAl);
             pres.setEstatus(true);
-        Dispositivos disp = new Dispositivos();
-        disp.setId(id);
-        disp.setEstatus("En espera");
-        pres.setDispositivos(disp);
 
+            Dispositivos disp = new Dispositivos();
+            disp.setId(id);
+            disp.setEstatus("Prestado");
+
+            pres.setDispositivos(disp);
             dao.insert(pres);
         req.getSession().removeAttribute("dispositivos");
         DaoDispositivos daoDispositivos = new DaoDispositivos();
-        req.getSession().setAttribute("dispositivos",daoDispositivos.findAll());
+        req.getSession().setAttribute("dispositivos", daoDispositivos.findAll());
         req.getSession().removeAttribute("prestamos");
         DaoPrestamos daoPrestamos = new DaoPrestamos();
-        req.getSession().setAttribute("prestamos",daoPrestamos.findAll());
+        req.getSession().setAttribute("prestamos", daoPrestamos.findAll());
         resp.sendRedirect("vistaBecario.jsp");
+
     }
 }
