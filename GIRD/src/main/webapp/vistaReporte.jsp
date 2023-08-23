@@ -86,7 +86,7 @@
                                         <a class="nav-link" href="vistaReporte.jsp">Reporte</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="vistaAdmin.jsp.jsp">Regresar</a>
+                                        <a class="nav-link" href="vistaAdmin.jsp">Regresar</a>
                                     </li>
                                 </ul>
                             </div>
