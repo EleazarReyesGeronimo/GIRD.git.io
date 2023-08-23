@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!-- fevicon -->
-    <link rel="icon" href="assets/images/girdpr.png" type="image/gif" />
+    <link rel="icon" href="assets/images/girdpr.png" type="image/gif"/>
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          media="screen">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -57,7 +58,7 @@
                 <div class="row d_flex">
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon">
-                            <li><a><i class="#" aria-hidden="true"></i><img src="assets/images/datd.png"></a> </li>
+                            <li><a><i class="#" aria-hidden="true"></i><img src="assets/images/datd.png"></a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-4 ">
@@ -65,7 +66,8 @@
                     </div>
                     <div class="col-md-4 col-sm-4 d_none">
                         <ul class="conta_icon ">
-                            <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i> utez.edu.mx</a> </li>
+                            <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i>
+                                utez.edu.mx</a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,7 +78,9 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-7">
                         <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarsExample04" aria-controls="navbarsExample04"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarsExample04">
@@ -91,15 +95,15 @@
                             </div>
                         </nav>
                     </div>
-                        <div class="col-md-3 col-sm-5 d_none">
-                            <ul class="sign">
-                                <li><a class="sign_btn" href="index.jsp"> Cerrar Sesion</a></li>
-                            </ul>
-                        </div>
+                    <div class="col-md-3 col-sm-5 d_none">
+                        <ul class="sign">
+                            <li><a class="sign_btn" href="index.jsp"> Cerrar Sesion</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <section class="banner_main">
         <div class="container">
             <div class="row">
@@ -110,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <center><h2 style="color:white;"><strong>E s t a d o  G e n e r a l</strong> </h2></center>
+        <center><h2 style="color:white;"><strong>E s t a d o G e n e r a l</strong></h2></center>
 
     </section>
     <!-- about section -->
@@ -121,135 +125,109 @@
 
 <%--<c:if user="${isAdmin}">
   <c:if user="${not empty sesion}">--%>
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr align="center">
-                    <th scope="col"><h1><strong><font face="Impac">Numero de Serie</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Tipo</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Marca</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Modelo</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Unidades</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Características</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Estatus</font></strong></h1></th>
-                    <th scope="col"><h1><strong><font face="Impac">Observaciones</font></strong></h1></th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${dispositivos}" var="u">
-                    <tr align="center">
-                        <td>${u.numSerie}</td>
-                        <td>${u.tipo}</td>
-                        <td>${u.marca}</td>
-                        <td>${u.modelo}</td>
-                        <td>${u.unidades}</td>
-                        <td>${u.caracteristicas}</td>
-                        <td>${u.estatus}</td>
-                        <td>${u.observaciones}</td>
-                        <!--<td>***</td>-->
-                        <c:choose>
-                            <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'Fuera de Servicio'}">
-                                <td></td> <!-- Celda vacía en lugar del botón -->
-                            </c:when>
-                            <c:otherwise>
-                                <td><a class="btn btn-warning"
-                                       href="prestamosForm.jsp?id=${u.id}" action="insertar">Prestar</a></td>
-                            </c:otherwise>
-                        </c:choose>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-
 <table class="table table-striped table-hover">
     <thead>
     <tr align="center">
-        <th scope="col"><h1><strong><font face="Impac">Nombre</font></strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Apellido</font></strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Matricula</font></strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Fecha de Prestamo</font></strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Fecha de Devolucion</font></strong></h1></th>
-        <th scope="col"><h1><strong><font face="Impac">Estatus</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Numero de Serie</font></strong></h1></th>
         <th scope="col"><h1><strong><font face="Impac">Tipo</font></strong></h1></th>
         <th scope="col"><h1><strong><font face="Impac">Marca</font></strong></h1></th>
         <th scope="col"><h1><strong><font face="Impac">Modelo</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Unidades</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Características</font></strong></h1></th>
+        <th scope="col"><h1><strong><font face="Impac">Estatus</font></strong></h1></th>
         <th scope="col"><h1><strong><font face="Impac">Observaciones</font></strong></h1></th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${prestamos}" var="u">
+    <c:forEach items="${dispositivos}" var="u">
         <tr align="center">
+            <td>${u.numSerie}</td>
+            <td>${u.tipo}</td>
+            <td>${u.marca}</td>
+            <td>${u.modelo}</td>
+            <td>${u.unidades}</td>
+            <td>${u.caracteristicas}</td>
+            <td>${u.estatus}</td>
+            <td>${u.observaciones}</td>
+            <!--<td>***</td>-->
+            <c:choose>
+                <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'Fuera de Servicio'}">
+                    <td></td>
+                    <!-- Celda vacía en lugar del botón -->
+                </c:when>
+                <c:otherwise>
+                    <td><a class="btn btn-warning"
+                           href="prestamosForm.jsp?id=${u.id}" action="insertar">Prestar</a></td>
+                </c:otherwise>
+            </c:choose>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
+<center>
+    <button type="button" class="btn btn-outline-primary"><a href="/historial-prestamos">Historial de
+        Prestamos</a></button>
+</center>
+
+<%-- <table class="table table-striped table-hover">
+     <h2>Préstamos Activos</h2>
+     <c:forEach items="${prestamos}" var="u">
+         <c:if test="${u.estatus}">
+             <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
+             <p>Nombre: ${u.nombre}</p>
+             <p>Apellido: ${u.apellido}</p>
+             <p>Matrícula: ${u.matricula}</p>
+             <p>Estatus: ${u.estatus}</p>
+             <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
+             <form action="PrestamoServlet" method="post">
+                 <input type="hidden" name="id" value="${u.id}" />
+                 <input type="hidden" name="operacion" value="devolucion" />
+                 <input type="submit" value="Devolver" action="update" />
+             </form>
+             <hr>
+         </c:if>
+     </c:forEach>
+ </table>--%>
+
+<!-- ... tu código posterior ... -->
+
+<%--
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Matrícula</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+        request.getSession().removeAttribute("prestamos");
+        DaoPrestamos daop = new DaoPrestamos();
+        request.getSession().setAttribute("prestamos",daop.findAll());
+    %>
+    <c:forEach items="${prestamos}" var="u">
+        <tr>
             <td>${u.nomAl}</td>
             <td>${u.apellAl}</td>
             <td>${u.matriAl}</td>
             <td>${u.entregaDisp}</td>
             <td>${u.devolucionDisp}</td>
-            <td>${u.estatus}</td>
-            <td>${u.dispositivos.tipo}</td>
-            <td>${u.dispositivos.marca}</td>
-            <td>${u.dispositivos.modelo}</td>
-            <td>${u.dispositivos.observaciones}</td>
+            <td><a class="btn btn-warning"
+                   href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=update">Devolver</a></td>
+
         </tr>
     </c:forEach>
     </tbody>
-</table>
-           <%-- <table class="table table-striped table-hover">
-                <h2>Préstamos Activos</h2>
-                <c:forEach items="${prestamos}" var="u">
-                    <c:if test="${u.estatus}">
-                        <p>Dispositivo: ${u.tipo} - ${u.marca} ${u.modelo}</p>
-                        <p>Nombre: ${u.nombre}</p>
-                        <p>Apellido: ${u.apellido}</p>
-                        <p>Matrícula: ${u.matricula}</p>
-                        <p>Estatus: ${u.estatus}</p>
-                        <p>Fecha de Préstamo: ${u.fechaPrestamo}</p>
-                        <form action="PrestamoServlet" method="post">
-                            <input type="hidden" name="id" value="${u.id}" />
-                            <input type="hidden" name="operacion" value="devolucion" />
-                            <input type="submit" value="Devolver" action="update" />
-                        </form>
-                        <hr>
-                    </c:if>
-                </c:forEach>
-            </table>--%>
-
-                <!-- ... tu código posterior ... -->
-
-                <%--
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Matrícula</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <%
-                        request.getSession().removeAttribute("prestamos");
-                        DaoPrestamos daop = new DaoPrestamos();
-                        request.getSession().setAttribute("prestamos",daop.findAll());
-                    %>
-                    <c:forEach items="${prestamos}" var="u">
-                        <tr>
-                            <td>${u.nomAl}</td>
-                            <td>${u.apellAl}</td>
-                            <td>${u.matriAl}</td>
-                            <td>${u.entregaDisp}</td>
-                            <td>${u.devolucionDisp}</td>
-                            <td><a class="btn btn-warning"
-                                   href="/GIRD_war_exploded/PrestamoServlet?id=${u.id}&operacion=update">Devolver</a></td>
-
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                    --%>
+    --%>
 
 <%--</c:if>
 </c:if>--%>
-    <%--</c:if>
+<%--</c:if>
 </c:if>
 <c:if test="${tipoSesion == true}">
 
-    <h1>No tienes permiso para ver esta página.</h1>
+<h1>No tienes permiso para ver esta página.</h1>
 
 </c:if>--%>
 <footer>
@@ -257,30 +235,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <H1> <strong class="text-white"><big>G I R D</big> </strong> </H1>
+                    <H1><strong class="text-white"><big>G I R D</big> </strong></H1>
                 </div>
 
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <h3>Contacto</h3>
                     <ul class="location_icon">
-                        <li><a href="https://goo.gl/maps/FnkGcw8AHjHUGxjRA"><i class="fa fa-map-marker" aria-hidden="true"></i>Palo Escrito 62760
+                        <li><a href="https://goo.gl/maps/FnkGcw8AHjHUGxjRA"><i class="fa fa-map-marker"
+                                                                               aria-hidden="true"></i>Palo Escrito 62760
                             <br> Emiliano Zapata Morelos</a>
                         </li>
-                        <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i> Utez.edu.mx</a> </li>
-                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +01 (777) 368 11 65</li>
+                        <li><a href="http://www.utez.edu.mx/"><i class="fa fa-pagelines" aria-hidden="true"></i>
+                            Utez.edu.mx</a></li>
+                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +01 (777) 368
+                            11 65
+                        </li>
                     </ul>
                     <ul class="social_icon">
-                        <li> <a href="https://www.facebook.com/UTEZ.Morelos?mibextid=2JQ9oc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li> <a href="https://twitter.com/utez_morelos?s=20"><i class="fa fa-twitter"></i></a></li>
-                        <li> <a href="https://www.youtube.com/@utez.morelos/featured"><i class="fa fa-youtube"></i></a></li>
-                        <li> <a href="https://instagram.com/utezmorelos?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/UTEZ.Morelos?mibextid=2JQ9oc"><i class="fa fa-facebook"
+                                                                                               aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="https://twitter.com/utez_morelos?s=20"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/@utez.morelos/featured"><i class="fa fa-youtube"></i></a>
+                        </li>
+                        <li><a href="https://instagram.com/utezmorelos?igshid=MzRlODBiNWFlZA=="><i
+                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <h3>Menus</h3>
                     <ul class="link_icon">
-                        <li class="active"> <a href="vistaBecario.jsp"> Usuarios</a></li>
-                        <li> <a href="preadmin.jsp"></i> Regresar</a></li>
+                        <li class="active"><a href="vistaBecario.jsp"> Usuarios</a></li>
+                        <li><a href="preadmin.jsp"></i> Regresar</a></li>
                     </ul>
                 </div>
             </div>

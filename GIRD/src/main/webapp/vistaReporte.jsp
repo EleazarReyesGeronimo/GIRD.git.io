@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,12 +147,13 @@
                 <td>${u.entregaDisp}</td>
                 <td>${u.devolucionDisp}</td>
                 <td>${u.estatus}</td>
-                <td>${u.tipo}</td>
-                <td>${u.marca}</td>
-                <td>${u.modelo}</td>
-                <td>${u.observaciones}</td>
-            </tr>
-        </c:forEach>
+                <td>${u.dispositivos.tipo}</td>
+                <td>${u.dispositivos.marca}</td>
+                <td>${u.dispositivos.modelo}</td>
+                <td>${u.dispositivos.observaciones}</td>
+                </c:forEach>
+                <!--<td>***</td>-->
+
         </tbody>
     </table>
 </form>

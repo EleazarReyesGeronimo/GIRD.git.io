@@ -43,6 +43,7 @@ public class PrestamoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String red = req.getParameter("red");
         String nomAl = req.getParameter("nomAl");
         String apellAl = req.getParameter("apellAl");
         String matriAl = req.getParameter("matriAl");
@@ -69,7 +70,7 @@ public class PrestamoServlet extends HttpServlet {
         req.getSession().removeAttribute("prestamos");
         DaoPrestamos daoPrestamos = new DaoPrestamos();
         req.getSession().setAttribute("prestamos", (List<Prestamos>) daoPrestamos.findAll());
-        resp.sendRedirect("vistaBecario.jsp");
+        resp.sendRedirect("vistaPrestamos.jsp");
 
     }
 }
