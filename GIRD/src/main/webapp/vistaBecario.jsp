@@ -88,9 +88,7 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="vistaBecario.jsp">Usuarios</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="preadmin.jsp">Regresar</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </nav>
@@ -265,7 +263,6 @@
                     <h3>Menus</h3>
                     <ul class="link_icon">
                         <li class="active"><a href="vistaBecario.jsp"> Usuarios</a></li>
-                        <li><a href="preadmin.jsp"></i> Regresar</a></li>
                     </ul>
                 </div>
             </div>

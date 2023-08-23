@@ -18,36 +18,29 @@ import java.util.List;
 @WebServlet(name = "PrestamoServlet", value = "/PrestamoServlet")
 public class PrestamoServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().removeAttribute("prestamos");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {;
+        int idD = Integer.parseInt(req.getParameter("idD"));
+        int idP = Integer.parseInt(req.getParameter("idP"));
+
         String operacion = req.getParameter("operacion");
-        Timestamp hora = Timestamp.valueOf(req.getParameter("devoluciondisp"));
-        String respuesta = "";
-
-        if (operacion.equals("insert")){
-
-            respuesta = "";
-        }
-        if (operacion.equals("update")){
+        String respuesta = "Disponible";
 
             DaoDispositivos daoD = new DaoDispositivos();
             DaoPrestamos daoP = new DaoPrestamos();
             Prestamos pres = new Prestamos();
-            Dispositivos disp = pres.getDispositivos();
+            Dispositivos disp = new Dispositivos();
 
-            pres.setEstatus(0);
-            pres.setEntregaDisp(hora);
+            pres.setEstatus(false);
 
+            disp.setId(idD);
             disp.setEstatus("Disponible");
 
-            daoP.update(pres.getId(), pres);
-            daoD.update(pres.getDispositivos().getId(),disp);
+            daoP.update(idP, pres);
+            daoD.updateP(idD,disp);
             respuesta = "vistaPrestamos.jsp";
 
-        }
-
         //Falta regresar una respuesta
-        resp.sendRedirect(respuesta);
+        resp.sendRedirect("/historial-prestamos");
     }
 
     @Override
@@ -59,19 +52,20 @@ public class PrestamoServlet extends HttpServlet {
 
             DaoPrestamos dao = new DaoPrestamos();
             int id = Integer.parseInt(req.getParameter("id"));
+            DaoDispositivos daoD = new DaoDispositivos();
 
             Prestamos pres = new Prestamos();
             pres.setNomAl(nomAl);
             pres.setApellAl(apellAl);
             pres.setMatriAl(matriAl);
-            pres.setEstatus(1);
+            pres.setEstatus(true);
 
             Dispositivos disp = new Dispositivos();
             disp.setId(id);
             disp.setEstatus("Prestado");
 
             pres.setDispositivos(disp);
-            dao.update(disp.getId(),disp);
+            daoD.updateP(pres.getDispositivos().getId(),disp);
             dao.insert(pres);
         req.getSession().removeAttribute("dispositivos");
         DaoDispositivos daoDispositivos = new DaoDispositivos();

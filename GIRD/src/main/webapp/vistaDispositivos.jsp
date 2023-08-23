@@ -88,7 +88,7 @@
                                             <a class="nav-link " href="vistaDispositivos.jsp"> Dispositivos </a>
                                         </li>
                                         <li class="nav-item" >
-                                            <a class="nav-link" href="vistaAdmin.jsp.jsp"> Administrador </a>
+                                            <a class="nav-link" href="vistaAdmin.jsp"> Administrador </a>
                                         </li>
                                     </ul>
                                 </div>
