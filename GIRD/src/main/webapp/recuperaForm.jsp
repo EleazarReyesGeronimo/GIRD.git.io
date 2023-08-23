@@ -110,10 +110,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h1><strong><font>Recuperar Contraseña</font></strong></h1></div><br>
                     <div class="panel-body">
-                        <form name="formRecuperarContrasexa" method="post" action="/recuperacion">
+                        <form name="formRecuperarContrasexa" method="post" action="recuperacion">
                             <div class="form-group" >
                                 <label class="control-label" for="matricula"> <strong> <h2>Correo electrónico:</h2></strong> </label>
-                                <input type="email"  id="matricula" ng-model="email" name="matricula" maxlength="50"/>
+                                <input type="email"  id="matricula" ng-model="email" name="email" maxlength="50"/>
                             </div>
                             <div class="form-group text-right" >
                                 <input  type="submit" class="btn btn-warning" ng-click="recuperarContrasexa()" ng-disabled="formRecuperarContrasexa.$invalid" value="Recuperar Contraseña" />
