@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
+
 
 @WebServlet(name = "PrestamoServlet", value = "/PrestamoServlet")
 public class PrestamoServlet extends HttpServlet {
@@ -19,22 +21,29 @@ public class PrestamoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("prestamos");
         String operacion = req.getParameter("operacion");
+        Timestamp hora = Timestamp.valueOf(req.getParameter("devoluciondisp"));
         String respuesta = "";
 
         if (operacion.equals("insert")){
-            DaoPrestamos dao = new DaoPrestamos();
+
             respuesta = "";
         }
         if (operacion.equals("update")){
-            DaoPrestamos dao = new DaoPrestamos();
-            int id = Integer.parseInt(req.getParameter("id"));
-            Prestamos pres = (Prestamos) dao.findOne(id);
-            Dispositivos disp = pres.getDispositivos();
-            pres.setEstatus(false);
-            disp.setEstatus("Disponible");
-            req.getSession().setAttribute("prestamo",pres);
 
-            respuesta ="prestamosForm.jsp";
+            DaoDispositivos daoD = new DaoDispositivos();
+            DaoPrestamos daoP = new DaoPrestamos();
+            Prestamos pres = new Prestamos();
+            Dispositivos disp = pres.getDispositivos();
+
+            pres.setEstatus(0);
+            pres.setEntregaDisp(hora);
+
+            disp.setEstatus("Disponible");
+
+            daoP.update(pres.getId(), pres);
+            daoD.update(pres.getDispositivos().getId(),disp);
+            respuesta = "vistaPrestamos.jsp";
+
         }
 
         //Falta regresar una respuesta
@@ -47,7 +56,6 @@ public class PrestamoServlet extends HttpServlet {
         String nomAl = req.getParameter("nomAl");
         String apellAl = req.getParameter("apellAl");
         String matriAl = req.getParameter("matriAl");
-        boolean estatus = Boolean.parseBoolean(req.getParameter("estatus"));
 
             DaoPrestamos dao = new DaoPrestamos();
             int id = Integer.parseInt(req.getParameter("id"));
@@ -56,13 +64,14 @@ public class PrestamoServlet extends HttpServlet {
             pres.setNomAl(nomAl);
             pres.setApellAl(apellAl);
             pres.setMatriAl(matriAl);
-            pres.setEstatus(true);
+            pres.setEstatus(1);
 
             Dispositivos disp = new Dispositivos();
             disp.setId(id);
             disp.setEstatus("Prestado");
 
             pres.setDispositivos(disp);
+            dao.update(disp.getId(),disp);
             dao.insert(pres);
         req.getSession().removeAttribute("dispositivos");
         DaoDispositivos daoDispositivos = new DaoDispositivos();
@@ -73,4 +82,6 @@ public class PrestamoServlet extends HttpServlet {
         resp.sendRedirect("vistaPrestamos.jsp");
 
     }
+
+
 }

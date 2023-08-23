@@ -13,7 +13,7 @@ public class Prestamos {
     private Timestamp entregaDisp;
 
     private Timestamp devolucionDisp;
-    private boolean estatus;
+    private int estatus;
 
     private Dispositivos dispositivos;
 
@@ -25,7 +25,7 @@ public class Prestamos {
         this.dispositivos = dispositivos;
     }
 
-    public Prestamos(int id, String nomAl, String apellAl, String matriAl,boolean estatus) {
+    public Prestamos(int id, String nomAl, String apellAl, String matriAl,int estatus) {
         this.id = id;
         this.nomAl = nomAl;
         this.apellAl = apellAl;
@@ -85,11 +85,11 @@ public class Prestamos {
         this.devolucionDisp = devolucionDisp;
     }
 
-    public boolean isEstatus() {
+    public int getEstatus() {
         return estatus;
     }
 
-    public void setEstatus(boolean estatus) {
+    public void setEstatus(int estatus) {
         this.estatus = estatus;
     }
 }

@@ -151,12 +151,12 @@
             <td>${u.observaciones}</td>
             <!--<td>***</td>-->
             <c:choose>
-                <c:when test="${u.estatus eq 'En espera' || u.estatus eq 'Fuera de Servicio'}">
+                <c:when test="${u.estatus eq 'Prestado' || u.estatus eq 'Fuera de Servicio'}">
                     <td></td>
                     <!-- Celda vacía en lugar del botón -->
                 </c:when>
                 <c:otherwise>
-                    <td><a class="btn btn-warning"
+                    <td><a class="btn btn-success"
                            href="prestamosForm.jsp?id=${u.id}" action="insertar">Prestar</a></td>
                 </c:otherwise>
             </c:choose>
@@ -166,8 +166,7 @@
 </table>
 
 <center>
-    <button type="button" class="btn btn-outline-primary"><a href="/historial-prestamos">Historial de
-        Prestamos</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="/historial-prestamos">Historial de Prestamos</a></button>
 </center>
 
 <%-- <table class="table table-striped table-hover">

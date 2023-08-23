@@ -135,6 +135,7 @@
   </thead>
   <tbody>
   <c:forEach items="${prestamos}" var="u">
+    <c:if test="${u.estatus != 0}">
     <tr align="center">
       <td>${u.nomAl}</td>
       <td>${u.apellAl}</td>
@@ -146,6 +147,9 @@
       <td>${u.dispositivos.marca}</td>
       <td>${u.dispositivos.modelo}</td>
       <td>${u.dispositivos.observaciones}</td>
+      <td><a class="btn btn-success"
+             href="prestamoServlet.jsp?id=${u.id}?devoluciondisp=${now()}" action="update">Devolver</a></td>
+      </c:if>
     </tr>
   </c:forEach>
   </tbody>

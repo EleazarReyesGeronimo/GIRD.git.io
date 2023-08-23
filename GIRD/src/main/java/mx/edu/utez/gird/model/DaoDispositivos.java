@@ -170,4 +170,21 @@ public class DaoDispositivos implements DaoRepository{
         // ... otros métodos del DAO ...
     }
 
+    public boolean updateDispositivoStatus(int dispositivoId) {
+        boolean resp = false;
+        MysqlConector conector = new MysqlConector();
+        Connection con = conector.connect();
+        try {
+            PreparedStatement stmt = con.prepareStatement("UPDATE prestamos SET estatus = ? WHERE id = ?");
+            stmt.setString(1, "Disponible");
+            stmt.setInt(2, dispositivoId);
+            if (stmt.executeUpdate() > 0) {
+                resp = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resp;
+    }
+
 }
