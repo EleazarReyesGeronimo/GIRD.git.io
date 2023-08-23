@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "PrestamoServlet", value = "/PrestamoServlet")
 public class PrestamoServlet extends HttpServlet {
@@ -42,6 +43,7 @@ public class PrestamoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String red = req.getParameter("red");
         String nomAl = req.getParameter("nomAl");
         String apellAl = req.getParameter("apellAl");
         String matriAl = req.getParameter("matriAl");
@@ -67,8 +69,8 @@ public class PrestamoServlet extends HttpServlet {
         req.getSession().setAttribute("dispositivos", daoDispositivos.findAll());
         req.getSession().removeAttribute("prestamos");
         DaoPrestamos daoPrestamos = new DaoPrestamos();
-        req.getSession().setAttribute("prestamos", daoPrestamos.findAll());
-        resp.sendRedirect("vistaBecario.jsp");
+        req.getSession().setAttribute("prestamos", (List<Prestamos>) daoPrestamos.findAll());
+        resp.sendRedirect("vistaPrestamos.jsp");
 
     }
 }
