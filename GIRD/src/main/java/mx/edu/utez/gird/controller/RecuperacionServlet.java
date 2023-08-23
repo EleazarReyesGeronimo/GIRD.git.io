@@ -25,20 +25,17 @@ public class RecuperacionServlet extends HttpServlet {
 
         //Validar que el usuario exista en la base de datos
         DaoUsuarios dao = new DaoUsuarios();
-        boolean existe = dao.findOne2(email).isTipoUsr();
+        Usuarios usr = dao.findOne2(email);
+        Usuarios usrs = new Usuarios();
+        boolean existe = usr.isTipoUsr();
         //Si si existe:
         //Le mandaria un correo con el codigo para recuperar su contraseña
-        if(existe){
+        if(!existe){
             SendMail mail = new SendMail();
-            Usuarios usr = dao.findOne2(email);
             //String codigo = usr.getCodigo();
-            String url = req.getRequestURL().toString();
-            mail.sendEmail(email,
+            mail.sendEmail("20213tn133@utez.edu.mx",
                     "Actualización de contraseña",
-                    "Por favor, da click en el siguiente enlace" +
-                            " para recuperar tu contraseña <br><br> " +
-                          //  "<a href=\""+url+"?codigo="+codigo+"\">" +
-                            "Da click aqui</a> ");
+                    "El usuario " + usrs.getNombre() +  " necesita reemplazar su contraseña.");
         }else {
             System.out.println("No existe tu correo en la base de datos, no eres un usuario, lo siento.");
         }
