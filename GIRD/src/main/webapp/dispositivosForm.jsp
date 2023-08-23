@@ -164,7 +164,7 @@
                 <label for="validationServer09" class="form-label"><h3><strong>ESTADO:</strong></h3></label>
                 <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
                 <select class="form-control-file" id="validationServer09" name="estatus" value="${dispositivo.estatus}">
-                    <option value="Disponible" selected>Disponible</option>
+                    <option value="Disponible">Disponible</option>
                     <option value="En espera">En espera</option>
                     <option value="Fuera de servicio">Fuera de servicio</option>
                 </select>
