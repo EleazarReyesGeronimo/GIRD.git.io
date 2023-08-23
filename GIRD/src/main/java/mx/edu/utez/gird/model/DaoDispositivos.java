@@ -140,4 +140,34 @@ public class DaoDispositivos implements DaoRepository{
         }
         return resultado;
     }
+
+
+        public boolean existsByNumSerie(String numSerie) {
+            boolean exists = false;
+
+            MysqlConector con = new MysqlConector();
+            Connection connection = con.connect();
+
+            try {
+                PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(*) FROM dispositivos WHERE numSerie = ?");
+                stmt.setString(1, numSerie);
+
+                ResultSet resultSet = stmt.executeQuery();
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    exists = count > 0;
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                // Cierra la conexión, manejo de excepciones omitido aquí
+                con.disconnect(connection);
+            }
+
+            return exists;
+
+
+        // ... otros métodos del DAO ...
+    }
+
 }
