@@ -27,7 +27,10 @@ public class DaoUsuarios implements DaoRepository{
                 usrs.setApellido(res.getString("apellido"));
                 usrs.setEmail(res.getString("email"));
                 usrs.setContra(res.getString("contra"));
+                /*AQUI VA LA VARIABLE QUE REGRESA LA CADENA DEPENDIENDO DEL VALOR QUE RECIBE, LA VERDAD
+                 YA NO RECUERDO MUY BIEN CÓMO FUNCIONA ESTA LINEA XD, PREGUTALE A CHAT*/
                 usrs.setTipoUserCadena(res.getBoolean("tipoUsr")? "Administrador" : "Becario");
+                /*ESA QUE QUEDA EN MEDIO DE LOS COMENTARIOS ES LA LINEA IMPORTANTE*/
                 usrs.setTipoUsr(res.getBoolean("tipoUsr"));
                 listaUsuarios.add(usrs);
             }
@@ -48,10 +51,11 @@ public class DaoUsuarios implements DaoRepository{
             stmt.setInt(1,id);
             ResultSet res = stmt.executeQuery();
             if (res.next()) {
+                usrs.setId(res.getInt("id"));
                 usrs.setNombre(res.getString("nombre"));
                 usrs.setApellido(res.getString("apellido"));
-                usrs.setApellido(res.getString("email"));
-                usrs.setApellido(res.getString("contra"));
+                usrs.setEmail(res.getString("email"));
+                usrs.setContra(res.getString("contra"));
                 usrs.setTipoUsr(res.getBoolean("tipoUsr"));
             } else {
                 usrs.setNombre("No existe el usuario con el id: "+id);
@@ -160,21 +164,22 @@ public class DaoUsuarios implements DaoRepository{
         return usrs;
     }
 
-    public Usuarios findOne2(String correo){
+    public Usuarios findOne2(String email){
         Usuarios usr = new Usuarios();
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
         try{
             PreparedStatement stmt =
                     con.prepareStatement("select * from usuarios " +
-                            "where correo = ?");
-            stmt.setString(1,correo);
+                            "where email = ?");
+            stmt.setString(1,email);
             ResultSet res = stmt.executeQuery();
             if(res.next()) {
                 usr.setId(res.getInt("id"));
                 usr.setNombre(res.getString("nombre"));
                 usr.setEmail(res.getString("email"));
                 usr.setContra(res.getString("contra"));
+                usr.setTipoUsr(res.getBoolean("tipoUsr"));
             }
         }catch (SQLException e){
             throw new RuntimeException(e);
