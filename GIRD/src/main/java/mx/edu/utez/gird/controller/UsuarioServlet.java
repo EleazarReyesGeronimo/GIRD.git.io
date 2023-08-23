@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "UsuarioServlet", value = "/UsuarioServlet")
 public class UsuarioServlet extends HttpServlet {
@@ -44,6 +45,8 @@ public class UsuarioServlet extends HttpServlet {
         String email = req.getParameter("email");
         String contra = req.getParameter("contra");
         //boolean tipoUsr = req.equals("tipoUsr");
+        String redirect = "vistaUsuarios.jsp";
+
 
         boolean tipoUsr = Boolean.parseBoolean(req.getParameter("tipoUsr"));
                /* req.setAttribute("tipoUsrVariable", tipoUsr);
@@ -58,13 +61,14 @@ public class UsuarioServlet extends HttpServlet {
         }else{
             if (req.getParameter("email").equals(req.getParameter("email"))){
                 System.out.println("El usuario con ese email ya existe, registre otro nuevo usuario.");
-                resp.sendRedirect("usuariosForm.jsp");
+                redirect = "usuariosForm.jsp";
             }else {
                 dao.insert(new Usuarios(0,nombre,apellido,email,contra,tipoUsr));
+                redirect = "vistaUsuarios.jsp";
             }
-
         }
-
-        resp.sendRedirect("vistaUsuarios.jsp");
+        DaoUsuarios daoUsuarios = new DaoUsuarios();
+        req.getSession().setAttribute("usuarios", (List<Usuarios>) daoUsuarios.findAll());
+        resp.sendRedirect(redirect);
     }
 }
