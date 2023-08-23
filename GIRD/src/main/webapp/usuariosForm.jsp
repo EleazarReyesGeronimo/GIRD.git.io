@@ -128,7 +128,7 @@
 
         <div class="col-md-4">
             <label for="validationServer02" class="form-label"><h3><strong>CORREO ELECTRONICO:</strong></h3></label>
-            <input type="email" minlength="22" maxlength="64" class="form-control-file" name="email" id="validationServer02" placeholder="Ingresa el email del usuario" value="${usuario.email}" required>
+            <input type="email" minlength="22" maxlength="64" class="form-control-file" name="email" id="validationServer02" placeholder="Ingresa un email único del usuario" value="${usuario.email}" required>
         </div>
         <br><br>
 
@@ -137,14 +137,16 @@
             <input type="password" minlength="10" maxlength="224" class="form-control-file" name="contra" id="validationServer03" placeholder="Ingresa la contraseña de inicio de sesión del usuario" value="${usuario.contra}" required>
         </div>
 
+        <!-- AQUI ESTA LO DE USUARIOS DE TIPO DE VERDADERO Y FALSO -->
         <div class="col-md-4">    <br><br>
             <label for="validationServer09" class="form-label"><h3><strong>TIPO DE USUARIO:</strong></h3></label>
             <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
             <select class="form-control-file" id="validationServer09" name="tipoUsr" value="${usuario.tipoUsr}">
-                <option value="true">Administrador</option>
+               <option value="true">Administrador</option>
                 <option value="false">Becario</option>
             </select>
         </div>
+        <!-- AQUI TERMINA-->
 
         <br><br>
 
@@ -185,7 +187,7 @@
                     <h3>Menú</h3>
                     <ul class="link_icon">
                         <li class="active"> <a href="usuariosForm.jsp"> Registro Usuarios</a></li>
-                        <li> <a href="vistaAdmin.jsp"></i> Regresar</a></li>
+                        <li> <a href="vistaUsuarios.jsp"></i> Regresar</a></li>
 
                     </ul>
                 </div>
