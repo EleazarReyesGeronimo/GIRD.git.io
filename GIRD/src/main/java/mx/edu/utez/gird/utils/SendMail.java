@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class SendMail {
     final private String de = "20213tn133@utez.edu.mx";
-    final private String pass = "20213tn133la2";
+    final private String pass = "gzeohwixcuhhgojy";
 
     public SendMail(){
     }
