@@ -77,4 +77,10 @@ public class Usuarios {
     public void setTipoUserCadena(String tipoUserCadena) {
         this.tipoUserCadena = tipoUserCadena;
     }
+
+    public String getMaskedContra() {
+        int length = getContra().length();
+        return "•".repeat(length);
+    }
+
 }
