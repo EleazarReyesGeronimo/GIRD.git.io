@@ -25,4 +25,7 @@ public class MysqlConector {
         }
         return null;
     }
+
+    public void disconnect(Connection connection) {
+    }
 }
