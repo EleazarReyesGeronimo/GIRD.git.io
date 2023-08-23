@@ -149,11 +149,10 @@
             <td>${u.nombre}</td>
             <td>${u.apellido}</td>
             <td>${u.email}</td>
-            <td>${u.contra}</td>
+            <td>${u.maskedContra}</td>
             <td>${u.tipoUserCadena}</td>
 
             <td>
-
                 <button><a class="btn btn-outline-danger"href="UsuarioServlet?id=${u.id}&operacion=delete">Eliminar Usuario</a></button>
             </td>
             <td> <button><a class="btn btn-outline-warning" href="UsuarioServlet?id=${u.id}&operacion=update">Modificar Usuario</a></button></td>
