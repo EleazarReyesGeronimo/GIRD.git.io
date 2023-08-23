@@ -118,12 +118,12 @@
 
             <div class="col-md-4">
                 <label for="validationServer06" class="form-label"><h3><strong>No. DE SERIE:</strong></h3></label>
-                <input type="text" maxlength="20" class="form-control-file" name="numSerie" id="validationServer06" placeholder="Ingresa el numero de serie del dispositivo" value="${dispositivo.numSerie}" required>
+                <input type="text" maxlength="20" class="form-control-file" name="numSerie" id="validationServer06" placeholder="Ingresa un número de serie único del dispositivo" value="${dispositivo.numSerie}" required>
             </div>
 
             <div class="col-md-4">
                 <label for="validationServer01" class="form-label"><h3><strong>TIPO:</strong></h3></label>
-                <input type="text" maxlength="20" class="form-control-file" name="tipo" id="validationServer01" placeholder="Ingresa el tipo de dispositivo" value="${dispositivo.tipo}" required>
+                <input type="text" maxlength="20" class="form-control-file" name="tipo" id="validationServer01" placeholder="Ingresa qué dispositivo es" value="${dispositivo.tipo}" required>
             </div>
 
             <div class="col-md-4">
@@ -222,7 +222,7 @@
                     <h3>Menus</h3>
                     <ul class="link_icon">
                         <li class="active"> <a href="dispositivosForm.jsp"> </i> Registro Dispositivos</a></li>
-                        <li> <a href="vistaAdmin.jsp"></i> Regresar</a></li>
+                        <li> <a href="vistaDispositivos.jsp"></i> Regresar</a></li>
                     </ul>
                 </div>
             </div>
@@ -248,13 +248,19 @@
 <!-- sidebar -->
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/custom.js"></script>
+<%--<c:if test="${empty msg}">
+    <script>
+        alert('${msg}');
+    </script>
+    <% request.getSession().removeAttribute("msg");%>
+</c:if>--%>
 </body>
 </html>
 <!--numSerie varchar(20) not null,
 tipo varchar(20) not null,
 marca varchar(50) not null,
-modelo varchar(50) not null,
 unidades int not null,
+modelo varchar(50) not null,
 nPuertos int,
 tPuertos varchar(200),
 estatus varchar(50),
