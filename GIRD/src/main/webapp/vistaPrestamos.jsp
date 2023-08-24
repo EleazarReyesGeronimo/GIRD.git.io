@@ -86,7 +86,7 @@
                     <a class="nav-link" href="vistaPrestamos.jsp">Historial</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="vistaBecario.jsp">Regresar</a>
+                    <a class="nav-link" href="vista-dispositivos">Regresar</a>
                   </li>
                 </ul>
               </div>
@@ -181,8 +181,8 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <h3>Menus</h3>
           <ul class="link_icon">
-            <li class="active"> <a href="vistaPrestamos.jsp">Historial</a></li>
-            <li> <a href="vistaBecario.jsp"></i> Regresar</a></li>
+            <li class="active"> <a href="historial-prestamos">Historial</a></li>
+            <li> <a href="vista-dispositivos"></i> Regresar</a></li>
           </ul>
         </div>
       </div>

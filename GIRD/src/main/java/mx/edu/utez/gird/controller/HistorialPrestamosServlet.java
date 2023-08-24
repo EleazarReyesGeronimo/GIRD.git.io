@@ -1,5 +1,6 @@
 package mx.edu.utez.gird.controller;
 
+import mx.edu.utez.gird.model.DaoDispositivos;
 import mx.edu.utez.gird.model.DaoPrestamos;
 import mx.edu.utez.gird.model.Prestamos;
 
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Historial", urlPatterns = {"/historial-prestamos", "/vista-Reporte"})
+@WebServlet(name = "Historial", urlPatterns = {"/historial-prestamos", "/vista-Reporte","/vista-dispositivos"})
 public class HistorialPrestamosServlet extends HttpServlet {
     String action;
     String redirect;
@@ -29,6 +30,9 @@ public class HistorialPrestamosServlet extends HttpServlet {
             case "/vista-Reporte":
                 req.setAttribute("prestamos", new DaoPrestamos().findAll());
                 redirect = "/vistaReporte.jsp";
+            case "/vista-dispositivos":
+                req.setAttribute("dispositivos", new DaoDispositivos().findAll());
+                redirect = "/vistaBecario.jsp";
         }
         req.getRequestDispatcher(redirect).forward(req, resp);
     }

@@ -86,7 +86,10 @@
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="vistaBecario.jsp">Usuarios</a>
+                                        <a class="nav-link" href="vista-dispositivos">Usuarios</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="historial-prestamos">Historial</a>
                                     </li>
 
                                 </ul>
@@ -164,7 +167,7 @@
 </table>
 
 <center>
-    <button type="button" class="btn btn-outline-primary"><a href="/historial-prestamos">Historial de Prestamos</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="historial-prestamos">Historial de Prestamos</a></button>
 </center>
 
 <%-- <table class="table table-striped table-hover">
@@ -262,7 +265,10 @@
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <h3>Menus</h3>
                     <ul class="link_icon">
-                        <li class="active"><a href="vistaBecario.jsp"> Usuarios</a></li>
+                        <li class="active"><a href="vista-dispositivos"> Usuarios</a></li>
+                    </ul>
+                    <ul class="link_icon">
+                        <li class="active"><a href="historial-prestamos"> Usuarios</a></li>
                     </ul>
                 </div>
             </div>
