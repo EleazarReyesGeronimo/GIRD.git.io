@@ -142,8 +142,8 @@
             <label for="validationServer09" class="form-label"><h3><strong>TIPO DE USUARIO:</strong></h3></label>
             <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
             <select class="form-control-file" id="validationServer09" name="tipoUsr" value="${usuario.tipoUsr}">
-               <option value="true">Administrador</option>
-                <option value="false">Becario</option>
+               <option value="false">Becario</option>
+                <option value="true">Administrador</option>
             </select>
         </div>
         <!-- AQUI TERMINA-->
