@@ -83,7 +83,7 @@
                                         <a class="nav-link" href="usuariosForm.jsp">Registro Usuario</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="vistaAdmin.jsp">Regresar</a>
+                                        <a class="nav-link" href="vistaUsuarios.jsp">Regresar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -142,8 +142,8 @@
             <label for="validationServer09" class="form-label"><h3><strong>TIPO DE USUARIO:</strong></h3></label>
             <%--<input type="text" class="form-control-file" id="validationServer09" name="estatus" placeholder="Ingresa el estado del dispositivo" value="${dispositivo.estatus}" required>--%>
             <select class="form-control-file" id="validationServer09" name="tipoUsr" value="${usuario.tipoUsr}">
-               <option value="true">Administrador</option>
-                <option value="false">Becario</option>
+               <option value="true">Becario</option>
+                <option value="false">Administrador</option>
             </select>
         </div>
         <!-- AQUI TERMINA-->
