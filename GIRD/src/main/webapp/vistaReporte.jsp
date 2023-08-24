@@ -146,7 +146,7 @@
                 <td>${u.matriAl}</td>
                 <td>${u.entregaDisp}</td>
                 <td>${u.devolucionDisp}</td>
-                <td>${u.estatus}</td>
+                <td>${u.estatus ? 'Activo' : 'Devuelto'}</td>
                 <td>${u.dispositivos.tipo}</td>
                 <td>${u.dispositivos.marca}</td>
                 <td>${u.dispositivos.modelo}</td>
