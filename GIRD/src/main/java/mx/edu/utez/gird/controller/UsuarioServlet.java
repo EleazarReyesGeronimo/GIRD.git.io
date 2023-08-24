@@ -45,11 +45,11 @@ public class UsuarioServlet extends HttpServlet {
         String email = req.getParameter("email");
         String contra = req.getParameter("contra");
         //boolean tipoUsr = req.equals("tipoUsr");
-        String redirect = "vistaUsuarios.jsp";
+        //String redirect = "vistaUsuarios.jsp";
 
-
+        //CHECAR si sí retorna el valor correcto
         boolean tipoUsr = Boolean.parseBoolean(req.getParameter("tipoUsr"));
-               /* req.setAttribute("tipoUsrVariable", tipoUsr);
+              /* req.setAttribute("tipoUsrVariable", tipoUsr);
         req.getRequestDispatcher("vistaUsuarios.jsp").forward(req, resp);*/
 
         DaoUsuarios dao = new DaoUsuarios();
@@ -58,17 +58,10 @@ public class UsuarioServlet extends HttpServlet {
             int id = Integer.parseInt(req.getParameter("id"));
             //Es una operacion de update
             dao.update(id,new Usuarios(id,nombre,apellido,email,contra,tipoUsr));
-        }else{
-            if (req.getParameter("email").equals(req.getParameter("email"))){
-                System.out.println("El usuario con ese email ya existe, registre otro nuevo usuario.");
-                redirect = "usuariosForm.jsp";
-            }else {
-                dao.insert(new Usuarios(0,nombre,apellido,email,contra,tipoUsr));
-                redirect = "vistaUsuarios.jsp";
-            }
+        }else {
+            dao.insert(new Usuarios(0,nombre,apellido,email,contra,tipoUsr));
         }
-        DaoUsuarios daoUsuarios = new DaoUsuarios();
-        req.getSession().setAttribute("usuarios", (List<Usuarios>) daoUsuarios.findAll());
-        resp.sendRedirect(redirect);
+        resp.sendRedirect("vistaUsuarios.jsp");
+
     }
 }
