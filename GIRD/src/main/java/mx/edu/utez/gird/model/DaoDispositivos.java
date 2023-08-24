@@ -99,11 +99,29 @@ public class DaoDispositivos implements DaoRepository{
         MysqlConector con = new MysqlConector();
         Connection conection = con.connect();
         try {
-            PreparedStatement stmt =
+            /*PreparedStatement stmt =
                     conection.prepareStatement(
-                            "delete from dispositivos where id=?");
-            stmt.setInt(1,id);
-            int resultado = stmt.executeUpdate();
+                            "SET FOREIGN_KEY_CHECKS = 0;" +
+                                    "delete from dispositivos where id=?;" +
+                                    "SET FOREIGN_KEY_CHECKS = 1;");*/
+
+
+            PreparedStatement disableFK = conection.prepareStatement("SET FOREIGN_KEY_CHECKS = 0;");
+            disableFK.executeUpdate();
+            disableFK.close();
+
+            // Elimina el registro en la tabla "dispositivos"
+            PreparedStatement deleteStmt = conection.prepareStatement("DELETE FROM dispositivos WHERE id = ?");
+            deleteStmt.setInt(1, id);
+            deleteStmt.executeUpdate();
+
+            // Reactiva las restricciones de clave externa
+            PreparedStatement enableFK = conection.prepareStatement("SET FOREIGN_KEY_CHECKS = 1;");
+            enableFK.executeUpdate();
+
+
+            //stmt.setInt(1,id);
+            int resultado = deleteStmt.executeUpdate();
             if(resultado != 0){
                 //Si se hizo
                 return true;
