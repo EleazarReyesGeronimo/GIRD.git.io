@@ -160,7 +160,31 @@
                         <label class="form-check-label" for="flexCheckDefault">
                         </label>
                     </div>-->
-                    <button><a class="btn btn-outline-danger"href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar Dispositivo</a></button>
+                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteModal_${u.id}">
+                        Eliminar Dispositivo
+                    </button>
+                    <div class="modal fade" id="confirmDeleteModal_${u.id}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel_${u.id}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmDeleteModalLabel_${u.id}">Confirmar Eliminación</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas eliminar este dispositivo?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <a class="btn btn-danger" href="DispositivoServlet?id=${u.id}&operacion=delete">Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 </td>
                 <td> <button><a class="btn btn-outline-warning" href="DispositivoServlet?id=${u.id}&operacion=update">Modificar Dispositivo</a></button></td>
             </tr>

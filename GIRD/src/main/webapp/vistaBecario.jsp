@@ -36,9 +36,9 @@
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
-<%--<div class="loader_bg">
+<div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
-</div>--%>
+</div>
 <%--<c:if test="${tipoSesion != true}">
     <c:if test="${not empty sesion}">--%>
 <!-- end loader -->
@@ -108,7 +108,7 @@
                 <div class="text-bg">
                     <img src="assets/images/girdpr.png" width="400"><br><br>
 
-                    <span>U S U A R I O S</span>
+                    <span>P R E S T A M O S</span>
                 </div>
             </div>
         </div>

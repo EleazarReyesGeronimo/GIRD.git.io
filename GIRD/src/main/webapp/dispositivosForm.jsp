@@ -179,12 +179,35 @@
             <!--<div class="col-md-4" ><br><br>
                 <label  class="form-label"><h3><strong>Foto Del Dispositivo =</h5></strong></h3></label>
                 <input type="file" class="form-control" aria-label="file example" required>
-            </div>-->
-            <input type="hidden" name="id" value="${dispositivo.id}">
-
-            <div class="col-12" align="center"><br><br>
-                <button class="btn btn-primary" type="submit" value="registrar">Agregar Dispostivo</button>
+            </div>--><div class="col-12" align="center"><br><br>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#confirmAddModal" type="button">Agregar Dispositivo</button>
+        </div>
+            <div class="modal fade" id="confirmAddModal" tabindex="-1" role="dialog" aria-labelledby="confirmAddModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmAddModalLabel">Confirmar Agregar Dispositivo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Estás seguro de que deseas agregar este dispositivo?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <form action="DispositivoServlet" method="post">
+                                <input type="hidden" name="id" value="${dispositivo.id}">
+                                <button type="submit" class="btn btn-primary">Agregar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         </form>
     </fieldset>
 </section>

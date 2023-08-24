@@ -132,10 +132,35 @@
                 <input type="text" maxlength="20" class="form-control-file" name="matriAl"  placeholder="Ingresa la matricula del alumno" value="${alumno.matriAl}" required>            </div>
 
             <input type="hidden" name="estatus" value="true"/>
-            <input type="hidden" name="id" value="<%=request.getParameter("id")%>"/>
-            <div class="col-12" align="center"><br><br>
-                <button class="btn btn-primary" type="submit" value="registrar" action="PrestamoServlet">Registrar Prestamo</button>
+                <div class="col-12" align="center"><br><br>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#confirmRegisterLoanModal" type="button">Registrar Préstamo</button>
+                </div>
             </div>
+            <div class="modal fade" id="confirmRegisterLoanModal" tabindex="-1" role="dialog" aria-labelledby="confirmRegisterLoanModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmRegisterLoanModalLabel">Confirmar Registrar Préstamo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Estás seguro de que deseas registrar este préstamo?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <form action="PrestamoServlet" method="post">
+                                <input type="hidden" name="id" value="<%=request.getParameter("id")%>"/>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </form>
     </fieldset>
 </section>

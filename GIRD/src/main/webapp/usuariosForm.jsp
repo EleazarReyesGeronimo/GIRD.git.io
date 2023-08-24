@@ -153,8 +153,34 @@
         <input type="hidden" name="id" value="${usuario.id}"/>
 
         <div class="col-12" align="center"><br><br>
-            <button class="btn btn-primary" type="submit">Agregar Usuario</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#confirmAddUserModal" type="button">Agregar Usuario</button>
         </div>
+        <div class="modal fade" id="confirmAddUserModal" tabindex="-1" role="dialog" aria-labelledby="confirmAddUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmAddUserModalLabel">Confirmar Agregar Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Estás seguro de que deseas agregar este usuario?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <form action="UsuarioServlet" method="post">
+                            <!-- Campos necesarios para agregar un usuario -->
+                            <input type="hidden" name="id" value="${usuario.id}">
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </form>
 </fieldset>
 <br><br>

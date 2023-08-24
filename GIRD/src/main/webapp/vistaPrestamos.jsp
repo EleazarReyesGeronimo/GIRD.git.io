@@ -36,9 +36,9 @@
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
-<%--<div class="loader_bg">
+<<div class="loader_bg">
     <div class="loader"><img src="assets/images/loading.gif" alt="#" /></div>
-</div>--%>
+</div>
 <%--<c:if test="${tipoSesion != true}">
     <c:if test="${not empty sesion}">--%>
 <!-- end loader -->
