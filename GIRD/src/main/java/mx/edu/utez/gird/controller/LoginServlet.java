@@ -28,7 +28,6 @@ public class LoginServlet extends HttpServlet {
             if (usrs.isTipoUsr()){
                 redirect = "vistaAdmin.jsp";
             } else {
-                //aqui iria la lógica para conseguir los dispositivos y los prestamos para mostrarlos en vistaBecario
 
                 req.getSession().removeAttribute("dispositivos");
                 DaoDispositivos daoDispositivos = new DaoDispositivos();
