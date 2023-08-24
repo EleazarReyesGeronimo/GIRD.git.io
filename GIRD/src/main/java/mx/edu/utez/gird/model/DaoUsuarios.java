@@ -3,6 +3,8 @@ package mx.edu.utez.gird.model;
 import mx.edu.utez.gird.utils.MysqlConector;
 
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,10 +29,7 @@ public class DaoUsuarios implements DaoRepository{
                 usrs.setApellido(res.getString("apellido"));
                 usrs.setEmail(res.getString("email"));
                 usrs.setContra(res.getString("contra"));
-                /*AQUI VA LA VARIABLE QUE REGRESA LA CADENA DEPENDIENDO DEL VALOR QUE RECIBE, LA VERDAD
-                 YA NO RECUERDO MUY BIEN CÓMO FUNCIONA ESTA LINEA XD, PREGUTALE A CHAT*/
                 usrs.setTipoUserCadena(res.getBoolean("tipoUsr")? "Administrador" : "Becario");
-                /*ESA QUE QUEDA EN MEDIO DE LOS COMENTARIOS ES LA LINEA IMPORTANTE*/
                 usrs.setTipoUsr(res.getBoolean("tipoUsr"));
                 listaUsuarios.add(usrs);
             }
@@ -186,4 +185,6 @@ public class DaoUsuarios implements DaoRepository{
         }
         return usr;
     }
+
+
 }
