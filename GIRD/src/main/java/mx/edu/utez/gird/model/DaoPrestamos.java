@@ -25,7 +25,9 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setMatriAl(res.getString("matriAl"));
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
+                pres.setEstatus(res.getBoolean("estatus"));
                 Dispositivos disp = new Dispositivos();
+                disp.setId(res.getInt("id_dispositivos"));
                 disp.setTipo(res.getString("tipo"));
                 disp.setMarca(res.getString("marca"));
                 disp.setModelo(res.getString("modelo"));
@@ -60,6 +62,7 @@ public class DaoPrestamos implements DaoRepository{
                 pres.setEntregaDisp(res.getTimestamp("entregaDisp"));
                 pres.setDevolucionDisp(res.getTimestamp("devolucionDisp"));
                 Dispositivos disp = new Dispositivos();
+                disp.setId(res.getInt("id"));
                 disp.setNumSerie(res.getString("numSerie"));
                 disp.setModelo(res.getString("modelo"));
                 disp.setEstatus(res.getString("estatus"));
@@ -83,9 +86,8 @@ public class DaoPrestamos implements DaoRepository{
         MysqlConector conector = new MysqlConector();
         Connection con = conector.connect();
         try {
-            PreparedStatement stmt = con.prepareStatement("update prestamos set devolucionDisp = now(), estatus = ?  where id = ?");
-            stmt.setBoolean(1,false);
-            stmt.setInt(2, pres.getId());
+            PreparedStatement stmt = con.prepareStatement("update prestamos set devolucionDisp = now(), estatus = false  where id = ?");
+            stmt.setInt(1, id);
             if(stmt.executeUpdate() > 0) resp = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -93,6 +95,7 @@ public class DaoPrestamos implements DaoRepository{
 
         return resp;
     }
+
 
     @Override
     public boolean delete(int id) {
@@ -136,5 +139,23 @@ public class DaoPrestamos implements DaoRepository{
         }
         return resultado;
     }
+
+    public boolean updatePrestamoStatus(int prestamoId) {
+        boolean resp = false;
+        MysqlConector conector = new MysqlConector();
+        Connection con = conector.connect();
+        try {
+            PreparedStatement stmt = con.prepareStatement("UPDATE prestamos SET devolucionDisp = now(), estatus = ? WHERE id = ?");
+            stmt.setBoolean(1, false);
+            stmt.setInt(2, prestamoId);
+            if (stmt.executeUpdate() > 0) {
+                resp = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resp;
+    }
+
 
 }

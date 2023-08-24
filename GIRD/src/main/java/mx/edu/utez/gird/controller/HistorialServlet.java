@@ -17,7 +17,7 @@ import java.util.Map;
 public class HistorialServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String historial = "/WEB-INF/ReporteDispositivos.jasper";
+        String historial = "/WEB-INF/RP22.jasper";
         File file = new File(getServletContext().getRealPath(historial));
         InputStream input = new FileInputStream(file);
         Map mapa = new HashMap();

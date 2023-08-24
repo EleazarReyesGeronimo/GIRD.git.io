@@ -143,4 +143,38 @@ public class DaoDispositivos implements DaoRepository{
         return resultado;
     }
 
+
+    public boolean updateDispositivoStatus(int dispositivoId) {
+        boolean resp = false;
+        MysqlConector conector = new MysqlConector();
+        Connection con = conector.connect();
+        try {
+            PreparedStatement stmt = con.prepareStatement("UPDATE prestamos SET estatus = ? WHERE id = ?");
+            stmt.setString(1, "Disponible");
+            stmt.setInt(2, dispositivoId);
+            if (stmt.executeUpdate() > 0) {
+                resp = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resp;
+    }
+
+    public boolean updateP(int id, Object usrs) {
+        Dispositivos disp = (Dispositivos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
+        es como castear pero una clase, para saber que se está utilizando*/
+        boolean resp = false;
+        MysqlConector conector = new MysqlConector();
+        Connection con = conector.connect();
+        try {
+
+            PreparedStatement stmt = con.prepareStatement("update dispositivos set estatus = 'Disponible' where id = ?");
+            stmt.setInt(1,id);
+            if(stmt.executeUpdate() > 0) resp = true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resp;
+    }
 }

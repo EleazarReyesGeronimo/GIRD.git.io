@@ -1,4 +1,4 @@
-
+<%@ page import="mx.edu.utez.gird.model.Prestamos" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -117,7 +117,6 @@
   <!-- about section -->
   </div>
 </header>
-
   <table class="table table-striped table-hover">
   <thead>
   <tr align="center">
@@ -135,6 +134,7 @@
   </thead>
   <tbody>
   <c:forEach items="${prestamos}" var="u">
+    <c:if test="${u.estatus == true}">
     <tr align="center">
       <td>${u.nomAl}</td>
       <td>${u.apellAl}</td>
@@ -146,6 +146,9 @@
       <td>${u.dispositivos.marca}</td>
       <td>${u.dispositivos.modelo}</td>
       <td>${u.dispositivos.observaciones}</td>
+      <td><a class="btn btn-success"
+             href="PrestamoServlet?idP=${u.id}&idD=${u.dispositivos.id}" >Devolver</a></td>
+      </c:if>
     </tr>
   </c:forEach>
   </tbody>
