@@ -2,6 +2,8 @@ package mx.edu.utez.gird.model;
 
 import mx.edu.utez.gird.utils.MysqlConector;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -113,7 +115,7 @@ public class DaoDispositivos implements DaoRepository{
         }
     }
 
-    @Override
+   @Override
     public boolean insert(Object usrs){
         Dispositivos disp = (Dispositivos) usrs;/*Esta linea nos especifica que estamos usando la clase de Usuarios,
         es como castear pero una clase, para saber que se está utilizando*/
@@ -139,35 +141,6 @@ public class DaoDispositivos implements DaoRepository{
             throw new RuntimeException(e);
         }
         return resultado;
-    }
-
-
-        public boolean existsByNumSerie(String numSerie) {
-            boolean exists = false;
-
-            MysqlConector con = new MysqlConector();
-            Connection connection = con.connect();
-
-            try {
-                PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(*) FROM dispositivos WHERE numSerie = ?");
-                stmt.setString(1, numSerie);
-
-                ResultSet resultSet = stmt.executeQuery();
-                if (resultSet.next()) {
-                    int count = resultSet.getInt(1);
-                    exists = count > 0;
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } finally {
-                // Cierra la conexión, manejo de excepciones omitido aquí
-                con.disconnect(connection);
-            }
-
-            return exists;
-
-
-        // ... otros métodos del DAO ...
     }
 
 }
