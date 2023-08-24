@@ -114,7 +114,7 @@
 <br><br><br>
 <section>
     <fieldset>
-        <form class="row g-3" method="post" action="/PrestamoServlet">
+        <form class="row g-3" method="post" action="PrestamoServlet">
 
             <div class="col-md-4">
                 <label class="form-label"><h3><strong>NOMBRE :</strong></h3></label>
@@ -129,7 +129,7 @@
             <div class="col-md-4">
 
                 <label class="form-label"><h3><strong>Matricula :</strong></h3></label>
-                <input type="text" maxlength="20" class="form-control-file" name="matriAl"  placeholder="Ingresa la matricula del alumno" value="${alumno.matriAl}" required>            </div>
+                <input type="text" minlength="10" maxlength="10" class="form-control-file" name="matriAl"  placeholder="Ingresa la matricula del alumno" value="${alumno.matriAl}" required>            </div>
 
             <input type="hidden" name="estatus" value="true"/>
                 <div class="col-12" align="center"><br><br>
