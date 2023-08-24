@@ -47,7 +47,6 @@ public class DispositivoServlet extends HttpServlet {
         String caracteristicas = req.getParameter("caracteristicas");
         String estatus = req.getParameter("estatus");
         String observaciones = req.getParameter("observaciones");
-        String redirect = "vistaDispositivos.jsp";
 
         DaoDispositivos dao = new DaoDispositivos();
 
@@ -56,19 +55,8 @@ public class DispositivoServlet extends HttpServlet {
             //Es una operacion de update
             dao.update(id,new Dispositivos(id,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
         }else{
-            if (req.getParameter("numSerie").equals(req.getParameter("numSerie"))){
-                //System.out.println("Este número de serie ya existe, ingrese uno nuevo.");
-                redirect = "dispositivosForm.jsp";
-                //req.getSession().setAttribute("msg", "El número de serie ya existe.");
-
-                /*Crear una variable fuera de las condicionales y llenarla dependiendo dónde entre, y asignarle el send redirect a esa variable*/
-            }else {
-                dao.insert(new Dispositivos(0,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
-                redirect = "vistaDispositivos.jsp";
-            }
+            dao.insert(new Dispositivos(0,numSerie,tipo,marca,modelo,unidades,caracteristicas,estatus,observaciones));
         }
-
-            resp.sendRedirect(redirect);
-
+        resp.sendRedirect("vistaDispositivos.jsp");
     }
 }
