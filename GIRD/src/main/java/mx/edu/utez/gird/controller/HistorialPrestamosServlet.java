@@ -30,9 +30,11 @@ public class HistorialPrestamosServlet extends HttpServlet {
             case "/vista-Reporte":
                 req.setAttribute("prestamos", new DaoPrestamos().findAll());
                 redirect = "/vistaReporte.jsp";
+                break;
             case "/vista-dispositivos":
                 req.setAttribute("dispositivos", new DaoDispositivos().findAll());
                 redirect = "/vistaBecario.jsp";
+                break;
         }
         req.getRequestDispatcher(redirect).forward(req, resp);
     }

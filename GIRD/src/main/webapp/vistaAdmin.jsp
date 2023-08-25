@@ -116,7 +116,7 @@
 <a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vistaDispositivos.jsp" class="btn btn-lg btn-success btn-block">D i s p o s i t i v o s</a>
 <br>
 <br>
-<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="/vista-Reporte" class="btn btn-lg btn-success btn-block">R e p o r t e</a>
+<a ng-bind="txtBtnIniciar"  ng-show="!btnIniciar" ng-disabled="btnIniciar" href="vista-Reporte" class="btn btn-lg btn-success btn-block">R e p o r t e</a>
 <br>
 <br>
 

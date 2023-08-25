@@ -40,7 +40,7 @@ public class PrestamoServlet extends HttpServlet {
             respuesta = "vistaPrestamos.jsp";
 
         //Falta regresar una respuesta
-        resp.sendRedirect("/historial-prestamos");
+        resp.sendRedirect("historial-prestamos");
     }
 
     @Override
